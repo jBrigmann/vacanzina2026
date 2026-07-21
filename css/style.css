@@ -218,17 +218,17 @@ tr:last-child td { border-bottom: none; }
   table-layout: fixed;
 }
 .itinerary-legs-table th:nth-child(1),
-.itinerary-legs-table td:nth-child(1) { width: 44%; }
+.itinerary-legs-table td:nth-child(1) { width: 52%; }
 .itinerary-legs-table th:nth-child(2),
 .itinerary-legs-table td:nth-child(2) { width: 12%; }
 .itinerary-legs-table th:nth-child(3),
-.itinerary-legs-table td:nth-child(3) { width: 11%; }
+.itinerary-legs-table td:nth-child(3) { width: 9%; }
 .itinerary-legs-table th:nth-child(4),
-.itinerary-legs-table td:nth-child(4) { width: 11%; }
+.itinerary-legs-table td:nth-child(4) { width: 9%; }
 .itinerary-legs-table th:nth-child(5),
-.itinerary-legs-table td:nth-child(5) { width: 11%; }
+.itinerary-legs-table td:nth-child(5) { width: 9%; }
 .itinerary-legs-table th:nth-child(6),
-.itinerary-legs-table td:nth-child(6) { width: 11%; }
+.itinerary-legs-table td:nth-child(6) { width: 9%; }
 .itinerary-legs-table td:nth-child(1) {
   overflow-wrap: break-word;
   word-break: break-word;
