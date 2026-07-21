@@ -22,6 +22,14 @@
     "vaporetto": "#c9762a",
   };
 
+  // Nome della struttura come link, con un popup al passaggio del mouse
+  // che mostra l'indirizzo del sito (niente iframe: molti siti di
+  // prenotazione bloccano l'incorporamento in altre pagine).
+  function linkWithPreview(nome, link) {
+    if (!link) return nome;
+    return `<span class="link-tip"><a href="${link}" target="_blank" rel="noopener">${nome}</a><span class="tip-bubble">🔗 ${link}</span></span>`;
+  }
+
   function colorFor(map, key, fallback) {
     if (!key) return fallback;
     return map[key.toLowerCase()] || fallback;
@@ -287,9 +295,7 @@
     // "Costi" e le scadenze di pagamento in "Prenotazioni".
     let accHtml = "";
     day.accommodations.filter((acc) => acc.importo != null).forEach((acc) => {
-      const nomeHtml = acc.link
-        ? `<a href="${acc.link}" target="_blank" rel="noopener">${acc.nome}</a>`
-        : acc.nome;
+      const nomeHtml = linkWithPreview(acc.nome, acc.link);
       const descrizione = acc.servizi || acc.tipo || "";
       accHtml += `<p class="mini">🏠 <strong>${nomeHtml}</strong>${descrizione ? " — " + descrizione : ""}</p>`;
     });
@@ -433,9 +439,7 @@
     }
     const importoLabel = acc.importo != null ? EUR(acc.importo) : (typeof acc.note === "number" ? EUR(acc.note) + " (stimato)" : "—");
     const noteLabel = typeof acc.note === "string" ? acc.note : "";
-    const nomeLabel = acc.link
-      ? `<a href="${acc.link}" target="_blank" rel="noopener">${acc.nome}</a>`
-      : acc.nome;
+    const nomeLabel = linkWithPreview(acc.nome, acc.link);
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${statusHtml}</td>

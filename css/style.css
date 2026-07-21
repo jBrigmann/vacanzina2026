@@ -234,6 +234,45 @@ tr:last-child td { border-bottom: none; }
   word-break: break-word;
 }
 
+/* Popup con l'indirizzo del sito al passaggio del mouse sul nome
+   della struttura (in Itinerario e in Prenotazioni). */
+.link-tip {
+  position: relative;
+  display: inline-block;
+}
+.link-tip .tip-bubble {
+  position: absolute;
+  left: 0;
+  bottom: 125%;
+  background: var(--blue-dark);
+  color: #fff;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  white-space: nowrap;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  z-index: 20;
+  pointer-events: none;
+}
+.link-tip .tip-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0.8rem;
+  border: 5px solid transparent;
+  border-top-color: var(--blue-dark);
+}
+.link-tip:hover .tip-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 .leg-mode {
   display: inline-block;
   width: 6.5rem;
