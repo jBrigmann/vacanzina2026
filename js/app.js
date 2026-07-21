@@ -22,12 +22,10 @@
     "vaporetto": "#c9762a",
   };
 
-  // Nome della struttura come link, con un popup al passaggio del mouse
-  // che mostra l'indirizzo del sito (niente iframe: molti siti di
-  // prenotazione bloccano l'incorporamento in altre pagine).
+  // Nome della struttura come link al sito di prenotazione.
   function linkWithPreview(nome, link) {
     if (!link) return nome;
-    return `<span class="link-tip"><a href="${link}" target="_blank" rel="noopener">${nome}</a><span class="tip-bubble">🔗 ${link}</span></span>`;
+    return `<a href="${link}" target="_blank" rel="noopener">${nome}</a>`;
   }
 
   function colorFor(map, key, fallback) {
