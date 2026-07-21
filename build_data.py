@@ -69,6 +69,50 @@ def date_label_it(c):
     # (the trip only spans 2026, so the year is omitted as redundant).
     return f"{c.day} {MESI_IT[c.month - 1]}"
 
+# Link di prenotazione e servizi (cucina/lavatrice/colazione) per ciascun
+# alloggio, forniti manualmente dall'utente: non sono nel foglio Excel.
+ACCOMMODATION_INFO = {
+    "Radetzky Rooms": {
+        "link": "https://www.booking.com/Share-m15lyw",
+        "servizi": "casa con cucina e lavatrice",
+    },
+    "Jo Hotel": {
+        "link": "https://www.booking.com/Share-6J0jbgU",
+        "servizi": "prima colazione inclusa",
+    },
+    "Hotel Marina Uno": {
+        "link": "https://www.booking.com/Share-78YSCe",
+        "servizi": "prima colazione inclusa",
+    },
+    "Hotel Capinera": {
+        "link": "https://www.booking.com/Share-NTGp86",
+        "servizi": "casa con cucina e lavatrice",
+    },
+    "Iesolo: Casa": {
+        "link": "https://www.airbnb.it/rooms/1701657293748998258",
+        "servizi": "casa con cucina e lavatrice",
+    },
+    "Welcome Home": {
+        "link": "https://www.booking.com/Share-Fdm8Wa",
+        "servizi": "casa con cucina e lavatrice",
+    },
+    "Dimora Veneziana Rooms": {
+        "link": "https://www.booking.com/Share-FibbB4",
+        "servizi": "casa con cucina e lavatrice",
+    },
+}
+
+def accommodation_extra(nome):
+    if not nome:
+        return {"link": None, "servizi": None}
+    nome = nome.strip()
+    if nome in ACCOMMODATION_INFO:
+        return ACCOMMODATION_INFO[nome]
+    for k, v in ACCOMMODATION_INFO.items():
+        if k.lower() in nome.lower() or nome.lower() in k.lower():
+            return v
+    return {"link": None, "servizi": None}
+
 days = []
 current_day = None
 
@@ -130,14 +174,18 @@ for r in range(3, MAX_ROW):
         current_day["legs"].append(leg)
 
     if k:
+        nome_acc = k.strip() if isinstance(k, str) else k
+        extra = accommodation_extra(nome_acc)
         current_day["accommodations"].append({
             "row": r,
-            "nome": k.strip() if isinstance(k, str) else k,
+            "nome": nome_acc,
             "tipo": l,
             "categoria": m,
             "quantita": n,
             "importo": o,
             "note": p,
+            "link": extra["link"],
+            "servizi": extra["servizi"],
         })
     elif l and m and o is not None and not k:
         current_day["expenses"].append({

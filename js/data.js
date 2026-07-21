@@ -171,7 +171,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 1,
           "importo": 90,
-          "note": "Addebito previsto il 19 lug 2026"
+          "note": "Addebito previsto il 19 lug 2026",
+          "link": "https://www.booking.com/Share-m15lyw",
+          "servizi": "casa con cucina e lavatrice"
         }
       ],
       "expenses": [
@@ -273,7 +275,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 1,
           "importo": 160,
-          "note": "Addebito previsto il 29 lug 2026"
+          "note": "Addebito previsto il 29 lug 2026",
+          "link": "https://www.booking.com/Share-6J0jbgU",
+          "servizi": "prima colazione inclusa"
         }
       ],
       "expenses": [
@@ -356,7 +360,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 1,
           "importo": 193.2,
-          "note": "Addebito previsto il 29 lug 2026"
+          "note": "Addebito previsto il 29 lug 2026",
+          "link": "https://www.booking.com/Share-78YSCe",
+          "servizi": "prima colazione inclusa"
         }
       ],
       "expenses": [
@@ -496,7 +502,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 1,
           "importo": 207.3,
-          "note": "Addebito previsto il 31 lug 2026"
+          "note": "Addebito previsto il 31 lug 2026",
+          "link": "https://www.booking.com/Share-NTGp86",
+          "servizi": "casa con cucina e lavatrice"
         },
         {
           "row": 41,
@@ -505,7 +513,9 @@ window.TRIP_DATA = {
           "categoria": null,
           "quantita": null,
           "importo": null,
-          "note": 96.2
+          "note": 96.2,
+          "link": null,
+          "servizi": null
         }
       ],
       "expenses": [
@@ -599,7 +609,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 1,
           "importo": 164.11,
-          "note": "Addebito previsto il 6 ago 2026"
+          "note": "Addebito previsto il 6 ago 2026",
+          "link": "https://www.airbnb.it/rooms/1701657293748998258",
+          "servizi": "casa con cucina e lavatrice"
         }
       ],
       "expenses": [
@@ -674,7 +686,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 1,
           "importo": 183.6,
-          "note": "Addebito previsto il 7 ago 2026"
+          "note": "Addebito previsto il 7 ago 2026",
+          "link": "https://www.booking.com/Share-Fdm8Wa",
+          "servizi": "casa con cucina e lavatrice"
         }
       ],
       "expenses": [
@@ -740,7 +754,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 3,
           "importo": 138.5,
-          "note": "Addebito previsto il 3 ago 2026"
+          "note": "Addebito previsto il 3 ago 2026",
+          "link": "https://www.booking.com/Share-FibbB4",
+          "servizi": "casa con cucina e lavatrice"
         }
       ],
       "expenses": [
@@ -776,7 +792,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 3,
           "importo": 138.5,
-          "note": null
+          "note": null,
+          "link": "https://www.booking.com/Share-FibbB4",
+          "servizi": "casa con cucina e lavatrice"
         }
       ],
       "expenses": [
@@ -812,7 +830,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 3,
           "importo": 138.5,
-          "note": null
+          "note": null,
+          "link": "https://www.booking.com/Share-FibbB4",
+          "servizi": "casa con cucina e lavatrice"
         }
       ],
       "expenses": [
@@ -848,7 +868,9 @@ window.TRIP_DATA = {
           "categoria": "alloggio",
           "quantita": 3,
           "importo": 138.5,
-          "note": null
+          "note": null,
+          "link": "https://www.booking.com/Share-FibbB4",
+          "servizi": "casa con cucina e lavatrice"
         }
       ],
       "expenses": [

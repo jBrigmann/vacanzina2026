@@ -287,7 +287,13 @@
     // alternative valutate ma non prenotate (importo mancante) non
     // vengono mostrate qui.
     day.accommodations.filter((acc) => acc.importo != null).forEach((acc) => {
-      accHtml += `<p class="mini">🏠 <strong>${acc.nome}</strong> (${acc.tipo || ""}) — ${EUR(acc.importo)}${acc.note ? " · " + acc.note : ""}</p>`;
+      const nomeHtml = acc.link
+        ? `<a href="${acc.link}" target="_blank" rel="noopener">${acc.nome}</a>`
+        : acc.nome;
+      accHtml += `<p class="mini">🏠 <strong>${nomeHtml}</strong> (${acc.tipo || ""}) — ${EUR(acc.importo)}${acc.note ? " · " + acc.note : ""}</p>`;
+      if (acc.servizi) {
+        accHtml += `<p class="mini acc-servizi">🧺 ${acc.servizi}</p>`;
+      }
     });
 
     let expHtml = "";
@@ -435,14 +441,18 @@
     }
     const importoLabel = acc.importo != null ? EUR(acc.importo) : (typeof acc.note === "number" ? EUR(acc.note) + " (stimato)" : "—");
     const noteLabel = typeof acc.note === "string" ? acc.note : "";
+    const nomeLabel = acc.link
+      ? `<a href="${acc.link}" target="_blank" rel="noopener">${acc.nome}</a>`
+      : acc.nome;
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${statusHtml}</td>
       <td>${acc.date_label}</td>
-      <td>${acc.nome}</td>
+      <td>${nomeLabel}</td>
       <td>${acc.tipo || ""}</td>
       <td>${importoLabel}</td>
       <td>${acc.dueDate ? acc.dueDate.toLocaleDateString("it-IT") : "-"}</td>
+      <td class="mini">${acc.servizi || ""}</td>
       <td class="mini">${noteLabel}</td>
     `;
     bookingsBody.appendChild(tr);
