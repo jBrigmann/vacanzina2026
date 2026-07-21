@@ -1,0 +1,183 @@
+import json
+import openpyxl
+from datetime import datetime, date
+
+SRC = "/sessions/wizardly-compassionate-mendel/mnt/Vacanze/Vacanza 2026.xlsx"
+
+wb = openpyxl.load_workbook(SRC, data_only=True)
+ws = wb["Itinerario 2026"]
+
+# Coordinates (approximate, WGS84) for places mentioned in the itinerary.
+# NOTE: these are place-level markers for the overview map. Real GPX tracks
+# will replace the straight connecting lines once provided by the user.
+COORDS = {
+    "Alessandria": [44.9133, 8.6141],
+    "Milano Rogoredo": [45.4342, 9.2286],
+    "Milano Lambrate": [45.4874, 9.2373],
+    "Verona Porta Nuova": [45.4299, 10.9840],
+    "Venezia Mestre": [45.4832, 12.2357],
+    "Cervignano-Aquileia-Grado": [45.8258, 13.3313],
+    "Radetzky Rooms": [45.7686, 13.3711],
+    "Basilica Patriarcale di Santa Maria Assunta": [45.7669, 13.3714],
+    "Pontile ASNAT": [45.7040, 13.3700],
+    "Marano Lagunare": [45.7342, 13.1758],
+    "Jo Hotel": [45.7346, 13.1755],
+    "Lignano Sabbiadoro": [45.6773, 13.1345],
+    "Hotel Marina Uno": [45.6790, 13.1310],
+    "Bibione (terminal traghetti)": [45.6156, 13.0428],
+    "ValleVecchia (molo traghetti)": [45.6667, 12.9833],
+    "ValleVecchia (imbarco traghetto Caorle )": [45.6520, 12.9200],
+    "Caorle": [45.5985, 12.8892],
+    "Appartamento (Caorle)": [45.5985, 12.8892],
+    "Casa del Marinaio": [45.5940, 12.8710],
+    "Imbarco Porto Santa Margherita": [45.5860, 12.8520],
+    "Porto Santa Margherita": [45.5840, 12.8500],
+    "Cortellazzo": [45.5324, 12.6892],
+    "Punta Tre Porti": [45.4599, 12.5423],
+    "Burano": [45.4854, 12.4166],
+    "Venezia": [45.4408, 12.3155],
+    "Bologna Centrale": [44.5075, 11.3426],
+}
+
+def coord_lookup(name):
+    if not name:
+        return None
+    name = name.strip()
+    if name in COORDS:
+        return COORDS[name]
+    for k, v in COORDS.items():
+        if k.lower() in name.lower() or name.lower() in k.lower():
+            return v
+    return None
+
+def to_hhmm(v):
+    if v is None:
+        return None
+    if hasattr(v, "strftime"):
+        return v.strftime("%H:%M")
+    return str(v)
+
+days = []
+current_day = None
+
+MAX_ROW = 88
+
+for r in range(3, MAX_ROW):
+    b = ws[f"B{r}"].value
+    c = ws[f"C{r}"].value
+    d = ws[f"D{r}"].value
+
+    if c is not None and isinstance(c, datetime):
+        if current_day:
+            days.append(current_day)
+        current_day = {
+            "date": c.strftime("%Y-%m-%d"),
+            "date_label": c.strftime("%d %B %Y"),
+            "weekday": b,
+            "tappa": d,
+            "legs": [],
+            "accommodations": [],
+            "expenses": [],
+        }
+
+    if current_day is None:
+        continue
+
+    e = ws[f"E{r}"].value
+    f = ws[f"F{r}"].value
+    g = ws[f"G{r}"].value
+    h = ws[f"H{r}"].value
+    i = ws[f"I{r}"].value
+    j = ws[f"J{r}"].value
+    k = ws[f"K{r}"].value
+    l = ws[f"L{r}"].value
+    m = ws[f"M{r}"].value
+    n = ws[f"N{r}"].value
+    o = ws[f"O{r}"].value
+    p = ws[f"P{r}"].value
+
+    if e:
+        origin, dest = None, None
+        if "→" in e:
+            parts = [x.strip() for x in e.split("→")]
+            origin = parts[0] if parts[0] else None
+            dest = parts[1] if len(parts) > 1 and parts[1] else None
+        leg = {
+            "row": r,
+            "percorso": e.strip(),
+            "origin": origin,
+            "destination": dest,
+            "origin_coords": coord_lookup(origin) if origin else None,
+            "dest_coords": coord_lookup(dest) if dest else None,
+            "mezzo": f,
+            "km": g,
+            "partenza": to_hhmm(h),
+            "arrivo": to_hhmm(i),
+        }
+        current_day["legs"].append(leg)
+
+    if k:
+        current_day["accommodations"].append({
+            "row": r,
+            "nome": k.strip() if isinstance(k, str) else k,
+            "tipo": l,
+            "categoria": m,
+            "quantita": n,
+            "importo": o,
+            "note": p,
+        })
+    elif l and m and o is not None and not k:
+        current_day["expenses"].append({
+            "row": r,
+            "voce": l,
+            "categoria": m.strip().lower() if isinstance(m, str) else m,
+            "quantita": n,
+            "importo": o,
+            "note": p,
+        })
+
+if current_day:
+    days.append(current_day)
+
+ws2 = wb["Costi preparatori 2026"]
+prep_costs = []
+for r in range(3, 11):
+    b = ws2[f"B{r}"].value
+    c = ws2[f"C{r}"].value
+    d = ws2[f"D{r}"].value
+    e = ws2[f"E{r}"].value
+    if b:
+        prep_costs.append({
+            "voce": b,
+            "categoria": c,
+            "quantita": d,
+            "importo": e if e is not None else 0,
+        })
+
+prep_total = ws2["E11"].value
+
+ws3 = wb["Totali 2026"]
+totals = {
+    "costi_preparatori": ws3["D2"].value,
+    "itinerario": ws3["D3"].value,
+    "totale": ws3["D5"].value,
+}
+
+trip = {
+    "meta": {
+        "titolo": "Vacanza in bici 2026 — Alessandria, Aquileia, Laguna, Venezia",
+        "generato_il": date.today().isoformat(),
+    },
+    "days": days,
+    "costi_preparatori": prep_costs,
+    "costi_preparatori_totale": prep_total,
+    "totali": totals,
+}
+
+out_path = "/sessions/wizardly-compassionate-mendel/mnt/outputs/vacanza2026/data/trip.json"
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(trip, f, ensure_ascii=False, indent=2)
+
+print("Days:", len(days))
+print("Totals:", totals)
+print("Wrote:", out_path)

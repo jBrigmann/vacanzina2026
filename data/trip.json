@@ -1,0 +1,963 @@
+{
+  "meta": {
+    "titolo": "Vacanza in bici 2026 — Alessandria, Aquileia, Laguna, Venezia",
+    "generato_il": "2026-07-21"
+  },
+  "days": [
+    {
+      "date": "2026-08-04",
+      "date_label": "04 August 2026",
+      "weekday": "ma",
+      "tappa": "ALESSANDRIA → CERVIGNANO",
+      "legs": [
+        {
+          "row": 4,
+          "percorso": "Alessandria → Milano Rogoredo",
+          "origin": "Alessandria",
+          "destination": "Milano Rogoredo",
+          "origin_coords": [
+            44.9133,
+            8.6141
+          ],
+          "dest_coords": [
+            45.4342,
+            9.2286
+          ],
+          "mezzo": "treno",
+          "km": null,
+          "partenza": "05:19",
+          "arrivo": "07:04"
+        },
+        {
+          "row": 5,
+          "percorso": "Milano Rogoredo  → Milano Lambrate",
+          "origin": "Milano Rogoredo",
+          "destination": "Milano Lambrate",
+          "origin_coords": [
+            45.4342,
+            9.2286
+          ],
+          "dest_coords": [
+            45.4874,
+            9.2373
+          ],
+          "mezzo": "treno",
+          "km": null,
+          "partenza": "07:13",
+          "arrivo": "07:21"
+        },
+        {
+          "row": 6,
+          "percorso": "Milano Lambrate → Verona Porta Nuova",
+          "origin": "Milano Lambrate",
+          "destination": "Verona Porta Nuova",
+          "origin_coords": [
+            45.4874,
+            9.2373
+          ],
+          "dest_coords": [
+            45.4299,
+            10.984
+          ],
+          "mezzo": "treno",
+          "km": null,
+          "partenza": "07:31",
+          "arrivo": "09:17"
+        },
+        {
+          "row": 7,
+          "percorso": "Verona Porta Nuova → Venezia Mestre",
+          "origin": "Verona Porta Nuova",
+          "destination": "Venezia Mestre",
+          "origin_coords": [
+            45.4299,
+            10.984
+          ],
+          "dest_coords": [
+            45.4832,
+            12.2357
+          ],
+          "mezzo": "treno",
+          "km": null,
+          "partenza": "09:22",
+          "arrivo": "10:37"
+        },
+        {
+          "row": 8,
+          "percorso": "Venezia Mestre → Cervignano-Aquileia-Grado",
+          "origin": "Venezia Mestre",
+          "destination": "Cervignano-Aquileia-Grado",
+          "origin_coords": [
+            45.4832,
+            12.2357
+          ],
+          "dest_coords": [
+            45.8258,
+            13.3313
+          ],
+          "mezzo": "treno",
+          "km": null,
+          "partenza": "10:49",
+          "arrivo": "12:06"
+        },
+        {
+          "row": 10,
+          "percorso": "Cervignano-Aquileia-Grado  → Radetzky Rooms",
+          "origin": "Cervignano-Aquileia-Grado",
+          "destination": "Radetzky Rooms",
+          "origin_coords": [
+            45.8258,
+            13.3313
+          ],
+          "dest_coords": [
+            45.7686,
+            13.3711
+          ],
+          "mezzo": "bici",
+          "km": 0.915,
+          "partenza": "12:20",
+          "arrivo": "12:23"
+        },
+        {
+          "row": 11,
+          "percorso": "Radetzky Rooms → Basilica Patriarcale di Santa Maria Assunta",
+          "origin": "Radetzky Rooms",
+          "destination": "Basilica Patriarcale di Santa Maria Assunta",
+          "origin_coords": [
+            45.7686,
+            13.3711
+          ],
+          "dest_coords": [
+            45.7669,
+            13.3714
+          ],
+          "mezzo": "bici",
+          "km": 7.18,
+          "partenza": "14:00",
+          "arrivo": "14:20"
+        },
+        {
+          "row": 12,
+          "percorso": "Basilica Patriarcale di Santa Maria Assunta → Radetzky Rooms",
+          "origin": "Basilica Patriarcale di Santa Maria Assunta",
+          "destination": "Radetzky Rooms",
+          "origin_coords": [
+            45.7669,
+            13.3714
+          ],
+          "dest_coords": [
+            45.7686,
+            13.3711
+          ],
+          "mezzo": "bici",
+          "km": 7.18,
+          "partenza": "18:30",
+          "arrivo": "18:50"
+        }
+      ],
+      "accommodations": [
+        {
+          "row": 15,
+          "nome": "Radetzky Rooms",
+          "tipo": "appartamento",
+          "categoria": "alloggio",
+          "quantita": 1,
+          "importo": 90,
+          "note": "Addebito previsto il 19 lug 2026"
+        }
+      ],
+      "expenses": [
+        {
+          "row": 3,
+          "voce": "biglietto del treno",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 92.52,
+          "note": null
+        },
+        {
+          "row": 13,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 14,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "date_label": "05 August 2026",
+      "weekday": "me",
+      "tappa": "AQUILEIA → MARANO",
+      "legs": [
+        {
+          "row": 18,
+          "percorso": "Radetzky Rooms → Pontile ASNAT",
+          "origin": "Radetzky Rooms",
+          "destination": "Pontile ASNAT",
+          "origin_coords": [
+            45.7686,
+            13.3711
+          ],
+          "dest_coords": [
+            45.704,
+            13.37
+          ],
+          "mezzo": "bici",
+          "km": 19.4,
+          "partenza": "08:30",
+          "arrivo": "10:00"
+        },
+        {
+          "row": 19,
+          "percorso": "Pontile ASNAT → Marano Lagunare",
+          "origin": "Pontile ASNAT",
+          "destination": "Marano Lagunare",
+          "origin_coords": [
+            45.704,
+            13.37
+          ],
+          "dest_coords": [
+            45.7342,
+            13.1758
+          ],
+          "mezzo": "barca",
+          "km": 7.15,
+          "partenza": null,
+          "arrivo": null
+        },
+        {
+          "row": 20,
+          "percorso": "Marano Lagunare → Jo Hotel",
+          "origin": "Marano Lagunare",
+          "destination": "Jo Hotel",
+          "origin_coords": [
+            45.7342,
+            13.1758
+          ],
+          "dest_coords": [
+            45.7346,
+            13.1755
+          ],
+          "mezzo": "bici",
+          "km": 0.5,
+          "partenza": null,
+          "arrivo": null
+        }
+      ],
+      "accommodations": [
+        {
+          "row": 23,
+          "nome": "Jo Hotel",
+          "tipo": "hotel",
+          "categoria": "alloggio",
+          "quantita": 1,
+          "importo": 160,
+          "note": "Addebito previsto il 29 lug 2026"
+        }
+      ],
+      "expenses": [
+        {
+          "row": 19,
+          "voce": "Motoscafo Pinta",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 150,
+          "note": null
+        },
+        {
+          "row": 21,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 22,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "date_label": "06 August 2026",
+      "weekday": "gi",
+      "tappa": "MARANO LAGUNARE → LIGNANO",
+      "legs": [
+        {
+          "row": 26,
+          "percorso": "Marano Lagunare → Lignano Sabbiadoro",
+          "origin": "Marano Lagunare",
+          "destination": "Lignano Sabbiadoro",
+          "origin_coords": [
+            45.7342,
+            13.1758
+          ],
+          "dest_coords": [
+            45.6773,
+            13.1345
+          ],
+          "mezzo": "barca",
+          "km": 8.21,
+          "partenza": "09:00",
+          "arrivo": "09:40"
+        },
+        {
+          "row": 27,
+          "percorso": "Lignano Sabbiadoro → Hotel Marina Uno",
+          "origin": "Lignano Sabbiadoro",
+          "destination": "Hotel Marina Uno",
+          "origin_coords": [
+            45.6773,
+            13.1345
+          ],
+          "dest_coords": [
+            45.679,
+            13.131
+          ],
+          "mezzo": "bici",
+          "km": 8.989999999999998,
+          "partenza": "09:40",
+          "arrivo": "10:20"
+        }
+      ],
+      "accommodations": [
+        {
+          "row": 30,
+          "nome": "Hotel Marina Uno",
+          "tipo": "hotel",
+          "categoria": "alloggio",
+          "quantita": 1,
+          "importo": 193.2,
+          "note": "Addebito previsto il 29 lug 2026"
+        }
+      ],
+      "expenses": [
+        {
+          "row": 26,
+          "voce": "TPLaguna",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 17.4,
+          "note": null
+        },
+        {
+          "row": 28,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 29,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "date_label": "07 August 2026",
+      "weekday": "ve",
+      "tappa": "LIGNANO → CAORLE",
+      "legs": [
+        {
+          "row": 33,
+          "percorso": "Hotel Marina Uno → Bibione (terminal traghetti)",
+          "origin": "Hotel Marina Uno",
+          "destination": "Bibione (terminal traghetti)",
+          "origin_coords": [
+            45.679,
+            13.131
+          ],
+          "dest_coords": [
+            45.6156,
+            13.0428
+          ],
+          "mezzo": "bici",
+          "km": 14.6,
+          "partenza": null,
+          "arrivo": null
+        },
+        {
+          "row": 34,
+          "percorso": "Bibione (terminal traghetti) → ValleVecchia (molo traghetti)",
+          "origin": "Bibione (terminal traghetti)",
+          "destination": "ValleVecchia (molo traghetti)",
+          "origin_coords": [
+            45.6156,
+            13.0428
+          ],
+          "dest_coords": [
+            45.6667,
+            12.9833
+          ],
+          "mezzo": "barca",
+          "km": 3.8,
+          "partenza": null,
+          "arrivo": null
+        },
+        {
+          "row": 35,
+          "percorso": "ValleVecchia (molo traghetti) → ValleVecchia (imbarco traghetto Caorle )",
+          "origin": "ValleVecchia (molo traghetti)",
+          "destination": "ValleVecchia (imbarco traghetto Caorle )",
+          "origin_coords": [
+            45.6667,
+            12.9833
+          ],
+          "dest_coords": [
+            45.652,
+            12.92
+          ],
+          "mezzo": "bici",
+          "km": 4.9,
+          "partenza": null,
+          "arrivo": null
+        },
+        {
+          "row": 36,
+          "percorso": "ValleVecchia (imbarco traghetto Caorle ) → Caorle",
+          "origin": "ValleVecchia (imbarco traghetto Caorle )",
+          "destination": "Caorle",
+          "origin_coords": [
+            45.652,
+            12.92
+          ],
+          "dest_coords": [
+            45.5985,
+            12.8892
+          ],
+          "mezzo": "barca",
+          "km": 0.615,
+          "partenza": null,
+          "arrivo": null
+        },
+        {
+          "row": 37,
+          "percorso": "Caorle → Appartamento",
+          "origin": "Caorle",
+          "destination": "Appartamento",
+          "origin_coords": [
+            45.5985,
+            12.8892
+          ],
+          "dest_coords": [
+            45.5985,
+            12.8892
+          ],
+          "mezzo": "bici",
+          "km": 4.4,
+          "partenza": null,
+          "arrivo": null
+        }
+      ],
+      "accommodations": [
+        {
+          "row": 40,
+          "nome": "Hotel Capinera",
+          "tipo": "b&b",
+          "categoria": "alloggio",
+          "quantita": 1,
+          "importo": 207.3,
+          "note": "Addebito previsto il 31 lug 2026"
+        },
+        {
+          "row": 41,
+          "nome": "Appartamento vista parco",
+          "tipo": "appartamento",
+          "categoria": null,
+          "quantita": null,
+          "importo": null,
+          "note": 96.2
+        }
+      ],
+      "expenses": [
+        {
+          "row": 38,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 39,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-08",
+      "date_label": "08 August 2026",
+      "weekday": "sa",
+      "tappa": "CAORLE → CORTELLAZZO",
+      "legs": [
+        {
+          "row": 44,
+          "percorso": "Casa del Marinaio → Imbarco Porto Santa Margherita",
+          "origin": "Casa del Marinaio",
+          "destination": "Imbarco Porto Santa Margherita",
+          "origin_coords": [
+            45.594,
+            12.871
+          ],
+          "dest_coords": [
+            45.586,
+            12.852
+          ],
+          "mezzo": "bici",
+          "km": 1.41,
+          "partenza": null,
+          "arrivo": null
+        },
+        {
+          "row": 45,
+          "percorso": "Imbarco Porto Santa Margherita → Porto Santa Margherita",
+          "origin": "Imbarco Porto Santa Margherita",
+          "destination": "Porto Santa Margherita",
+          "origin_coords": [
+            45.586,
+            12.852
+          ],
+          "dest_coords": [
+            45.584,
+            12.85
+          ],
+          "mezzo": "barca",
+          "km": 0.126,
+          "partenza": null,
+          "arrivo": null
+        },
+        {
+          "row": 46,
+          "percorso": "Porto Santa Margherita → Cortellazzo",
+          "origin": "Porto Santa Margherita",
+          "destination": "Cortellazzo",
+          "origin_coords": [
+            45.584,
+            12.85
+          ],
+          "dest_coords": [
+            45.5324,
+            12.6892
+          ],
+          "mezzo": "bici",
+          "km": 23.974,
+          "partenza": null,
+          "arrivo": null
+        }
+      ],
+      "accommodations": [
+        {
+          "row": 49,
+          "nome": "Iesolo: Casa",
+          "tipo": "appartamento",
+          "categoria": "alloggio",
+          "quantita": 1,
+          "importo": 164.11,
+          "note": "Addebito previsto il 6 ago 2026"
+        }
+      ],
+      "expenses": [
+        {
+          "row": 47,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 48,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "date_label": "09 August 2026",
+      "weekday": "do",
+      "tappa": "CORTELLAZZO → BURANO",
+      "legs": [
+        {
+          "row": 52,
+          "percorso": "Cortellazzo → Punta Tre Porti",
+          "origin": "Cortellazzo",
+          "destination": "Punta Tre Porti",
+          "origin_coords": [
+            45.5324,
+            12.6892
+          ],
+          "dest_coords": [
+            45.4599,
+            12.5423
+          ],
+          "mezzo": "bici",
+          "km": 26.6,
+          "partenza": null,
+          "arrivo": null
+        },
+        {
+          "row": 53,
+          "percorso": "Punta Tre Porti → Burano",
+          "origin": "Punta Tre Porti",
+          "destination": "Burano",
+          "origin_coords": [
+            45.4599,
+            12.5423
+          ],
+          "dest_coords": [
+            45.4854,
+            12.4166
+          ],
+          "mezzo": "vaporetto",
+          "km": 3.6,
+          "partenza": null,
+          "arrivo": null
+        }
+      ],
+      "accommodations": [
+        {
+          "row": 58,
+          "nome": "Welcome Home",
+          "tipo": "appartamento",
+          "categoria": "alloggio",
+          "quantita": 1,
+          "importo": 183.6,
+          "note": "Addebito previsto il 7 ago 2026"
+        }
+      ],
+      "expenses": [
+        {
+          "row": 54,
+          "voce": "ACTV biglietto 3 giorni",
+          "categoria": "trasporti",
+          "quantita": 2,
+          "importo": 90,
+          "note": "Venezia Unica"
+        },
+        {
+          "row": 55,
+          "voce": "ACTV biglietto 3 giorni",
+          "categoria": "trasporti",
+          "quantita": 1,
+          "importo": 33,
+          "note": "Rolling Venice per bambini (sconti su trasporti e musei)"
+        },
+        {
+          "row": 56,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 57,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "date_label": "10 August 2026",
+      "weekday": "lu",
+      "tappa": "BURANO → VENEZIA",
+      "legs": [
+        {
+          "row": 61,
+          "percorso": "→",
+          "origin": null,
+          "destination": null,
+          "origin_coords": null,
+          "dest_coords": null,
+          "mezzo": "bici",
+          "km": null,
+          "partenza": null,
+          "arrivo": null
+        }
+      ],
+      "accommodations": [
+        {
+          "row": 66,
+          "nome": "Dimora Veneziana Rooms",
+          "tipo": "appartamento",
+          "categoria": "alloggio",
+          "quantita": 3,
+          "importo": 138.5,
+          "note": "Addebito previsto il 3 ago 2026"
+        }
+      ],
+      "expenses": [
+        {
+          "row": 64,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 65,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "date_label": "11 August 2026",
+      "weekday": "ma",
+      "tappa": "VENEZIA",
+      "legs": [],
+      "accommodations": [
+        {
+          "row": 71,
+          "nome": "Dimora Veneziana Rooms",
+          "tipo": "appartamento",
+          "categoria": "alloggio",
+          "quantita": 3,
+          "importo": 138.5,
+          "note": null
+        }
+      ],
+      "expenses": [
+        {
+          "row": 69,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 70,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "date_label": "12 August 2026",
+      "weekday": "me",
+      "tappa": "VENEZIA",
+      "legs": [],
+      "accommodations": [
+        {
+          "row": 76,
+          "nome": "Dimora Veneziana Rooms",
+          "tipo": "appartamento",
+          "categoria": "alloggio",
+          "quantita": 3,
+          "importo": 138.5,
+          "note": null
+        }
+      ],
+      "expenses": [
+        {
+          "row": 74,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 75,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "date_label": "13 August 2026",
+      "weekday": "gi",
+      "tappa": "VENEZIA",
+      "legs": [],
+      "accommodations": [
+        {
+          "row": 81,
+          "nome": "Dimora Veneziana Rooms",
+          "tipo": "appartamento",
+          "categoria": "alloggio",
+          "quantita": 3,
+          "importo": 138.5,
+          "note": null
+        }
+      ],
+      "expenses": [
+        {
+          "row": 79,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        },
+        {
+          "row": 80,
+          "voce": "cena",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 45,
+          "note": null
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "date_label": "14 August 2026",
+      "weekday": "ve",
+      "tappa": "VENEZIA → ALESSANDRIA",
+      "legs": [
+        {
+          "row": 84,
+          "percorso": "Venezia Santa Lucia → Bologna Centrale",
+          "origin": "Venezia Santa Lucia",
+          "destination": "Bologna Centrale",
+          "origin_coords": [
+            45.4408,
+            12.3155
+          ],
+          "dest_coords": [
+            44.5075,
+            11.3426
+          ],
+          "mezzo": "treno",
+          "km": null,
+          "partenza": "13:40",
+          "arrivo": "15:45"
+        },
+        {
+          "row": 85,
+          "percorso": "Bologna Centrale → Alessandria",
+          "origin": "Bologna Centrale",
+          "destination": "Alessandria",
+          "origin_coords": [
+            44.5075,
+            11.3426
+          ],
+          "dest_coords": [
+            44.9133,
+            8.6141
+          ],
+          "mezzo": "treno",
+          "km": null,
+          "partenza": "16:26",
+          "arrivo": "19:23"
+        }
+      ],
+      "accommodations": [],
+      "expenses": [
+        {
+          "row": 83,
+          "voce": "biglietto del treno",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 81.44999999999999,
+          "note": null
+        },
+        {
+          "row": 86,
+          "voce": "pranzo al sacco",
+          "categoria": "vitto",
+          "quantita": 3,
+          "importo": 30,
+          "note": null
+        }
+      ]
+    }
+  ],
+  "costi_preparatori": [
+    {
+      "voce": "Noleggio bici babbo",
+      "categoria": "trasporto",
+      "quantita": 1,
+      "importo": 139
+    },
+    {
+      "voce": "Noleggio bici mamma",
+      "categoria": "trasporto",
+      "quantita": 1,
+      "importo": 139
+    },
+    {
+      "voce": "Borsello manubrio / smartphone",
+      "categoria": "attrezzatura cicloturismo",
+      "quantita": 1,
+      "importo": 0
+    },
+    {
+      "voce": "Kit riparazione forature / camere d’aria",
+      "categoria": "attrezzatura cicloturismo",
+      "quantita": 1,
+      "importo": 0
+    },
+    {
+      "voce": "Spray antizanzare / crema dopopuntura",
+      "categoria": "farmacia",
+      "quantita": null,
+      "importo": 0
+    },
+    {
+      "voce": "Occhiali fotocromatici",
+      "categoria": "abbigliamento tecnico",
+      "quantita": null,
+      "importo": 0
+    },
+    {
+      "voce": "Power bank",
+      "categoria": "elettronica",
+      "quantita": null,
+      "importo": 0
+    }
+  ],
+  "costi_preparatori_totale": 278,
+  "totali": {
+    "costi_preparatori": 278,
+    "itinerario": 2796.5799999999995,
+    "totale": 3074.5799999999995
+  }
+}
