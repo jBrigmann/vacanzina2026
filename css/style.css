@@ -258,6 +258,25 @@ tr:last-child td { border-bottom: none; }
   word-break: break-word;
 }
 
+/* Stesso principio per le card di dettaglio spese nella pagina Costi:
+   colonne allineate allo stesso modo su tutti i giorni. */
+.cost-detail-day-table {
+  table-layout: fixed;
+}
+.cost-detail-day-table th:nth-child(1),
+.cost-detail-day-table td:nth-child(1) { width: 30%; }
+.cost-detail-day-table th:nth-child(2),
+.cost-detail-day-table td:nth-child(2) { width: 16%; }
+.cost-detail-day-table th:nth-child(3),
+.cost-detail-day-table td:nth-child(3) { width: 14%; }
+.cost-detail-day-table th:nth-child(4),
+.cost-detail-day-table td:nth-child(4) { width: 40%; }
+.cost-detail-day-table td:nth-child(1),
+.cost-detail-day-table td:nth-child(4) {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .leg-mode {
   display: inline-block;
   width: 6.5rem;

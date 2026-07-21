@@ -113,7 +113,7 @@
         const cat = (acc.categoria || "alloggio").toLowerCase();
         categoryTotals[cat] = (categoryTotals[cat] || 0) + acc.importo;
       }
-      if (acc.voce !== undefined) {
+      if (acc.importo != null) {
         allExpenseRows.push({
           date: day.date, date_label: day.date_label, tappa: day.tappa,
           voce: acc.nome, categoria: acc.categoria || "alloggio", importo: acc.importo, note: acc.note,
