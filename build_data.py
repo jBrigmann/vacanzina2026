@@ -1,7 +1,9 @@
 import json
+import os
 import openpyxl
 from datetime import datetime, date
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC = "/sessions/wizardly-compassionate-mendel/mnt/Vacanze/Vacanza 2026.xlsx"
 
 wb = openpyxl.load_workbook(SRC, data_only=True)
@@ -57,6 +59,16 @@ def to_hhmm(v):
         return v.strftime("%H:%M")
     return str(v)
 
+MESI_IT = [
+    "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
+    "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre",
+]
+
+def date_label_it(c):
+    # e.g. "4 agosto" — no leading zero, Italian month name, no year
+    # (the trip only spans 2026, so the year is omitted as redundant).
+    return f"{c.day} {MESI_IT[c.month - 1]}"
+
 days = []
 current_day = None
 
@@ -72,7 +84,7 @@ for r in range(3, MAX_ROW):
             days.append(current_day)
         current_day = {
             "date": c.strftime("%Y-%m-%d"),
-            "date_label": c.strftime("%d %B %Y"),
+            "date_label": date_label_it(c),
             "weekday": b,
             "tappa": d,
             "legs": [],
@@ -174,10 +186,19 @@ trip = {
     "totali": totals,
 }
 
-out_path = "/sessions/wizardly-compassionate-mendel/mnt/outputs/vacanza2026/data/trip.json"
-with open(out_path, "w", encoding="utf-8") as f:
+out_json = os.path.join(BASE_DIR, "data", "trip.json")
+out_js = os.path.join(BASE_DIR, "js", "data.js")
+
+os.makedirs(os.path.dirname(out_json), exist_ok=True)
+with open(out_json, "w", encoding="utf-8") as f:
     json.dump(trip, f, ensure_ascii=False, indent=2)
+
+with open(out_js, "w", encoding="utf-8") as f:
+    f.write("window.TRIP_DATA = ")
+    json.dump(trip, f, ensure_ascii=False, indent=2)
+    f.write(";\n")
 
 print("Days:", len(days))
 print("Totals:", totals)
-print("Wrote:", out_path)
+print("Wrote:", out_json)
+print("Wrote:", out_js)

@@ -115,7 +115,11 @@
       }
     });
 
-    kmByDay.push({ date: day.date_label, km: Math.round(dayKm * 10) / 10 });
+    // "Km per giorno" si ferma al 9 agosto: da Venezia in poi (10-14 agosto)
+    // non ci sono più tappe in bici, quindi quei giorni non compaiono nel grafico.
+    if (day.date <= "2026-08-09") {
+      kmByDay.push({ date: day.date_label, km: Math.round(dayKm * 10) / 10 });
+    }
     spendByDay.push({ date: day.date_label, importo: Math.round(dayTotal * 100) / 100 });
   });
 
@@ -129,11 +133,11 @@
   const totNights = DATA.days.length - 1;
   const summaryCards = [
     { label: "Costo totale", value: EUR(DATA.totali.totale) },
-    { label: "Itinerario", value: EUR(DATA.totali.itinerario) },
+    { label: "Costi itinerario", value: EUR(DATA.totali.itinerario) },
     { label: "Costi preparatori", value: EUR(DATA.totali.costi_preparatori) },
+    { label: "Costo medio/giorno", value: EUR(DATA.totali.itinerario / DATA.days.length) },
     { label: "Giorni di viaggio", value: DATA.days.length },
     { label: "Km totali", value: `${Math.round(totalKm * 10) / 10} km` },
-    { label: "Costo medio/giorno", value: EUR(DATA.totali.itinerario / DATA.days.length) },
   ];
   const cardsEl = document.getElementById("summary-cards");
   summaryCards.forEach((c) => {
