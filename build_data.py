@@ -122,9 +122,10 @@ for r in range(3, MAX_ROW):
             "origin_coords": coord_lookup(origin) if origin else None,
             "dest_coords": coord_lookup(dest) if dest else None,
             "mezzo": f,
-            "km": g,
+            "km": round(g, 2) if isinstance(g, (int, float)) else g,
             "partenza": to_hhmm(h),
             "arrivo": to_hhmm(i),
+            "durata": to_hhmm(j),
         }
         current_day["legs"].append(leg)
 

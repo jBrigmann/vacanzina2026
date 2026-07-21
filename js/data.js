@@ -26,7 +26,8 @@ window.TRIP_DATA = {
           "mezzo": "treno",
           "km": null,
           "partenza": "05:19",
-          "arrivo": "07:04"
+          "arrivo": "07:04",
+          "durata": "01:45"
         },
         {
           "row": 5,
@@ -44,7 +45,8 @@ window.TRIP_DATA = {
           "mezzo": "treno",
           "km": null,
           "partenza": "07:13",
-          "arrivo": "07:21"
+          "arrivo": "07:21",
+          "durata": "00:06"
         },
         {
           "row": 6,
@@ -62,7 +64,8 @@ window.TRIP_DATA = {
           "mezzo": "treno",
           "km": null,
           "partenza": "07:31",
-          "arrivo": "09:17"
+          "arrivo": "09:17",
+          "durata": "01:44"
         },
         {
           "row": 7,
@@ -80,7 +83,8 @@ window.TRIP_DATA = {
           "mezzo": "treno",
           "km": null,
           "partenza": "09:22",
-          "arrivo": "10:37"
+          "arrivo": "10:37",
+          "durata": "01:15"
         },
         {
           "row": 8,
@@ -98,7 +102,8 @@ window.TRIP_DATA = {
           "mezzo": "treno",
           "km": null,
           "partenza": "10:49",
-          "arrivo": "12:06"
+          "arrivo": "12:06",
+          "durata": "01:15"
         },
         {
           "row": 10,
@@ -114,9 +119,10 @@ window.TRIP_DATA = {
             13.3711
           ],
           "mezzo": "bici",
-          "km": 0.915,
+          "km": 0.92,
           "partenza": "12:20",
-          "arrivo": "12:23"
+          "arrivo": "12:23",
+          "durata": "00:03"
         },
         {
           "row": 11,
@@ -134,7 +140,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": 7.18,
           "partenza": "14:00",
-          "arrivo": "14:20"
+          "arrivo": "14:20",
+          "durata": "00:20"
         },
         {
           "row": 12,
@@ -152,7 +159,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": 7.18,
           "partenza": "18:30",
-          "arrivo": "18:50"
+          "arrivo": "18:50",
+          "durata": "00:20"
         }
       ],
       "accommodations": [
@@ -215,7 +223,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": 19.4,
           "partenza": "08:30",
-          "arrivo": "10:00"
+          "arrivo": "10:00",
+          "durata": "01:30"
         },
         {
           "row": 19,
@@ -233,7 +242,8 @@ window.TRIP_DATA = {
           "mezzo": "barca",
           "km": 7.15,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         },
         {
           "row": 20,
@@ -251,7 +261,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": 0.5,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         }
       ],
       "accommodations": [
@@ -314,7 +325,8 @@ window.TRIP_DATA = {
           "mezzo": "barca",
           "km": 8.21,
           "partenza": "09:00",
-          "arrivo": "09:40"
+          "arrivo": "09:40",
+          "durata": null
         },
         {
           "row": 27,
@@ -330,9 +342,10 @@ window.TRIP_DATA = {
             13.131
           ],
           "mezzo": "bici",
-          "km": 8.989999999999998,
+          "km": 8.99,
           "partenza": "09:40",
-          "arrivo": "10:20"
+          "arrivo": "10:20",
+          "durata": null
         }
       ],
       "accommodations": [
@@ -395,7 +408,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": 14.6,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         },
         {
           "row": 34,
@@ -413,7 +427,8 @@ window.TRIP_DATA = {
           "mezzo": "barca",
           "km": 3.8,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         },
         {
           "row": 35,
@@ -431,7 +446,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": 4.9,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         },
         {
           "row": 36,
@@ -447,9 +463,10 @@ window.TRIP_DATA = {
             12.8892
           ],
           "mezzo": "barca",
-          "km": 0.615,
+          "km": 0.61,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         },
         {
           "row": 37,
@@ -467,7 +484,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": 4.4,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         }
       ],
       "accommodations": [
@@ -531,7 +549,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": 1.41,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         },
         {
           "row": 45,
@@ -547,9 +566,10 @@ window.TRIP_DATA = {
             12.85
           ],
           "mezzo": "barca",
-          "km": 0.126,
+          "km": 0.13,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         },
         {
           "row": 46,
@@ -565,9 +585,10 @@ window.TRIP_DATA = {
             12.6892
           ],
           "mezzo": "bici",
-          "km": 23.974,
+          "km": 23.97,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         }
       ],
       "accommodations": [
@@ -622,7 +643,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": 26.6,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         },
         {
           "row": 53,
@@ -640,7 +662,8 @@ window.TRIP_DATA = {
           "mezzo": "vaporetto",
           "km": 3.6,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         }
       ],
       "accommodations": [
@@ -705,7 +728,8 @@ window.TRIP_DATA = {
           "mezzo": "bici",
           "km": null,
           "partenza": null,
-          "arrivo": null
+          "arrivo": null,
+          "durata": null
         }
       ],
       "accommodations": [
@@ -868,7 +892,8 @@ window.TRIP_DATA = {
           "mezzo": "treno",
           "km": null,
           "partenza": "13:40",
-          "arrivo": "15:45"
+          "arrivo": "15:45",
+          "durata": null
         },
         {
           "row": 85,
@@ -886,7 +911,8 @@ window.TRIP_DATA = {
           "mezzo": "treno",
           "km": null,
           "partenza": "16:26",
-          "arrivo": "19:23"
+          "arrivo": "19:23",
+          "durata": null
         }
       ],
       "accommodations": [],

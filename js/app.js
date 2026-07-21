@@ -256,21 +256,27 @@
 
   // ---------- Itinerary days ----------
   const daysContainer = document.getElementById("days-container");
-  DATA.days.forEach((day) => {
+  // 11-13 agosto: soggiorno fisso a Venezia, niente di nuovo da mostrare
+  // qui (i costi restano comunque conteggiati in Panoramica/Costi/Prenotazioni).
+  const ITINERARY_SKIP_DATES = new Set(["2026-08-11", "2026-08-12", "2026-08-13"]);
+  const roundKm = (km) => Math.round(km * 100) / 100;
+
+  DATA.days.filter((day) => !ITINERARY_SKIP_DATES.has(day.date)).forEach((day) => {
     const card = document.createElement("div");
     card.className = "card day-card";
 
     let legsHtml = "";
     if (day.legs.length) {
-      legsHtml = `<table><thead><tr><th>Percorso</th><th>Mezzo</th><th>Km</th><th>Partenza</th><th>Arrivo</th></tr></thead><tbody>`;
+      legsHtml = `<table><thead><tr><th>Percorso</th><th>Mezzo</th><th>Km</th><th>Partenza</th><th>Arrivo</th><th>Durata</th></tr></thead><tbody>`;
       day.legs.forEach((leg) => {
         const modeClass = "mode-" + (leg.mezzo || "").toLowerCase();
         legsHtml += `<tr>
           <td>${leg.percorso}</td>
           <td><span class="leg-mode ${modeClass}">${leg.mezzo || "-"}</span></td>
-          <td>${leg.km != null ? leg.km + " km" : "-"}</td>
+          <td>${leg.km != null ? roundKm(leg.km) + " km" : "-"}</td>
           <td>${leg.partenza || "-"}</td>
           <td>${leg.arrivo || "-"}</td>
+          <td>${leg.durata || "-"}</td>
         </tr>`;
       });
       legsHtml += "</tbody></table>";
