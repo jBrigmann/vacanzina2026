@@ -159,6 +159,17 @@ section.panel.active { display: block; }
   color: var(--blue-dark);
 }
 
+.section-title {
+  font-size: 1.15rem;
+  color: var(--blue-dark);
+  margin: 1.6rem 0 0.8rem;
+}
+
+.day-cost-total {
+  text-align: right;
+  margin: 0.6rem 0 0;
+}
+
 .charts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

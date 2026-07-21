@@ -402,14 +402,37 @@
     prepBody.appendChild(tr);
   });
 
-  const detailBody = document.querySelector("#cost-detail-table tbody");
-  allExpenseRows
-    .filter((r) => r.importo != null)
-    .forEach((r) => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `<td>${r.date_label}</td><td>${r.tappa}</td><td>${r.voce}</td><td>${r.categoria || ""}</td><td>${EUR(r.importo)}</td><td class="mini">${r.note || ""}</td>`;
-      detailBody.appendChild(tr);
-    });
+  // Dettaglio spese: una card per giorno (stesso stile della pagina Itinerario)
+  // invece di un'unica tabella lunga con data e tappa ripetute su ogni riga.
+  const detailContainer = document.getElementById("cost-detail-container");
+  DATA.days.forEach((day) => {
+    const rows = allExpenseRows.filter((r) => r.date === day.date && r.importo != null);
+    if (!rows.length) return;
+
+    const dayTotal = rows.reduce((sum, r) => sum + r.importo, 0);
+    const tableRows = rows.map((r) => `<tr>
+      <td>${r.voce}</td>
+      <td>${r.categoria || ""}</td>
+      <td>${EUR(r.importo)}</td>
+      <td class="mini">${r.note || ""}</td>
+    </tr>`).join("");
+
+    const card = document.createElement("div");
+    card.className = "card day-card";
+    card.innerHTML = `
+      <div class="day-header">
+        <span class="day-weekday">${day.weekday || ""}</span>
+        <span class="day-date">${day.date_label}</span>
+        <span class="day-tappa">${day.tappa}</span>
+      </div>
+      <table class="cost-detail-day-table">
+        <thead><tr><th>Voce</th><th>Categoria</th><th>Importo</th><th>Note</th></tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+      <p class="mini day-cost-total">Totale giorno: <strong>${EUR(dayTotal)}</strong></p>
+    `;
+    detailContainer.appendChild(card);
+  });
 
   // ---------- Bookings panel ----------
   const bookingsBody = document.querySelector("#bookings-table tbody");
