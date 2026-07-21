@@ -3,16 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vacanza in bici 2026 — Alessandria, Aquileia, Laguna, Venezia</title>
+<title>Vacanzina 2026 — Aquileia, Laguna, Venezia</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="hero">
-  <h1>🚴 Vacanza in bici 2026</h1>
-  <p>Alessandria → Aquileia → Laguna di Marano → Lignano → Caorle → Venezia (4–14 agosto 2026)</p>
+  <h1>🚴 Vacanzina 2026</h1>
+  <p class="hero-subtitle">Aquileia → Venezia</p>
+  <p class="hero-dates">4 – 14 agosto</p>
 </header>
 
 <nav class="tabs" id="tabs">
@@ -40,6 +44,8 @@
         <h2>Spesa per giorno</h2>
         <div class="chart-wrap"><canvas id="chart-daily"></canvas></div>
       </div>
+    </div>
+    <div class="charts-grid">
       <div class="card">
         <h2>Km percorsi per mezzo di trasporto</h2>
         <div class="chart-wrap"><canvas id="chart-km-mode"></canvas></div>

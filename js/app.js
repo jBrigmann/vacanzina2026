@@ -128,12 +128,12 @@
   // ---------- Summary cards ----------
   const totNights = DATA.days.length - 1;
   const summaryCards = [
-    { label: "Costo totale viaggio", value: EUR(DATA.totali.totale) },
-    { label: "Itinerario (trasporti+vitto+alloggio)", value: EUR(DATA.totali.itinerario) },
+    { label: "Costo totale", value: EUR(DATA.totali.totale) },
+    { label: "Itinerario", value: EUR(DATA.totali.itinerario) },
     { label: "Costi preparatori", value: EUR(DATA.totali.costi_preparatori) },
     { label: "Giorni di viaggio", value: DATA.days.length },
     { label: "Km totali", value: `${Math.round(totalKm * 10) / 10} km` },
-    { label: "Costo medio / giorno", value: EUR(DATA.totali.itinerario / DATA.days.length) },
+    { label: "Costo medio/giorno", value: EUR(DATA.totali.itinerario / DATA.days.length) },
   ];
   const cardsEl = document.getElementById("summary-cards");
   summaryCards.forEach((c) => {
