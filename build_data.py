@@ -59,6 +59,19 @@ def to_hhmm(v):
         return v.strftime("%H:%M")
     return str(v)
 
+def compute_duration(h, i):
+    # Fallback: if the sheet has both a partenza and an arrivo time but no
+    # explicit durata, compute it ourselves (same-day, no overnight legs
+    # in this itinerary).
+    if not (hasattr(h, "hour") and hasattr(i, "hour")):
+        return None
+    start_min = h.hour * 60 + h.minute
+    end_min = i.hour * 60 + i.minute
+    diff = end_min - start_min
+    if diff < 0:
+        return None
+    return f"{diff // 60:02d}:{diff % 60:02d}"
+
 MESI_IT = [
     "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
     "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre",
@@ -169,7 +182,7 @@ for r in range(3, MAX_ROW):
             "km": round(g, 2) if isinstance(g, (int, float)) else g,
             "partenza": to_hhmm(h),
             "arrivo": to_hhmm(i),
-            "durata": to_hhmm(j),
+            "durata": to_hhmm(j) or compute_duration(h, i),
         }
         current_day["legs"].append(leg)
 

@@ -330,7 +330,7 @@
           "km": 8.21,
           "partenza": "09:00",
           "arrivo": "09:40",
-          "durata": null
+          "durata": "00:40"
         },
         {
           "row": 27,
@@ -349,7 +349,7 @@
           "km": 8.99,
           "partenza": "09:40",
           "arrivo": "10:20",
-          "durata": null
+          "durata": "00:40"
         }
       ],
       "accommodations": [
@@ -915,7 +915,7 @@
           "km": null,
           "partenza": "13:40",
           "arrivo": "15:45",
-          "durata": null
+          "durata": "02:05"
         },
         {
           "row": 85,
@@ -934,7 +934,7 @@
           "km": null,
           "partenza": "16:26",
           "arrivo": "19:23",
-          "durata": null
+          "durata": "02:57"
         }
       ],
       "accommodations": [],

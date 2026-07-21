@@ -282,24 +282,17 @@
       legsHtml += "</tbody></table>";
     }
 
+    // Pagina Itinerario = solo logistica (percorsi, orari, alloggio,
+    // servizi utili come lavatrice/cucina). I costi vivono nella pagina
+    // "Costi" e le scadenze di pagamento in "Prenotazioni".
     let accHtml = "";
-    // Solo gli alloggi con un importo effettivo (cioè prenotati): le
-    // alternative valutate ma non prenotate (importo mancante) non
-    // vengono mostrate qui.
     day.accommodations.filter((acc) => acc.importo != null).forEach((acc) => {
       const nomeHtml = acc.link
         ? `<a href="${acc.link}" target="_blank" rel="noopener">${acc.nome}</a>`
         : acc.nome;
-      accHtml += `<p class="mini">🏠 <strong>${nomeHtml}</strong> (${acc.tipo || ""}) — ${EUR(acc.importo)}${acc.note ? " · " + acc.note : ""}</p>`;
-      if (acc.servizi) {
-        accHtml += `<p class="mini acc-servizi">🧺 ${acc.servizi}</p>`;
-      }
+      const descrizione = acc.servizi || acc.tipo || "";
+      accHtml += `<p class="mini">🏠 <strong>${nomeHtml}</strong>${descrizione ? " — " + descrizione : ""}</p>`;
     });
-
-    let expHtml = "";
-    if (day.expenses.length) {
-      expHtml = "<p class=\"mini\">" + day.expenses.map((e) => `${e.voce}: ${EUR(e.importo)}`).join(" &middot; ") + "</p>";
-    }
 
     card.innerHTML = `
       <div class="day-header">
@@ -309,7 +302,6 @@
       </div>
       ${legsHtml}
       ${accHtml}
-      ${expHtml}
     `;
     daysContainer.appendChild(card);
   });
