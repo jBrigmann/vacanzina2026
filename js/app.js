@@ -283,8 +283,11 @@
     }
 
     let accHtml = "";
-    day.accommodations.forEach((acc) => {
-      accHtml += `<p class="mini">🏠 <strong>${acc.nome}</strong> (${acc.tipo || ""}) — ${acc.importo != null ? EUR(acc.importo) : "prezzo indicativo " + acc.note + " €"}${acc.note && acc.importo != null ? " · " + acc.note : ""}</p>`;
+    // Solo gli alloggi con un importo effettivo (cioè prenotati): le
+    // alternative valutate ma non prenotate (importo mancante) non
+    // vengono mostrate qui.
+    day.accommodations.filter((acc) => acc.importo != null).forEach((acc) => {
+      accHtml += `<p class="mini">🏠 <strong>${acc.nome}</strong> (${acc.tipo || ""}) — ${EUR(acc.importo)}${acc.note ? " · " + acc.note : ""}</p>`;
     });
 
     let expHtml = "";
@@ -408,10 +411,12 @@
 
   // ---------- Bookings panel ----------
   const bookingsBody = document.querySelector("#bookings-table tbody");
-  const bookingRows = allAccommodationRows.map((acc) => {
-    const dueDate = parseItalianNoteDate(acc.note);
-    return { ...acc, dueDate };
-  });
+  const bookingRows = allAccommodationRows
+    .filter((acc) => acc.importo != null) // solo prenotazioni effettive, non le alternative valutate
+    .map((acc) => {
+      const dueDate = parseItalianNoteDate(acc.note);
+      return { ...acc, dueDate };
+    });
   bookingRows.sort((a, b) => {
     if (a.dueDate && b.dueDate) return a.dueDate - b.dueDate;
     if (a.dueDate) return -1;
