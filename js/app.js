@@ -267,7 +267,7 @@
 
     let legsHtml = "";
     if (day.legs.length) {
-      legsHtml = `<table><thead><tr><th>Percorso</th><th>Mezzo</th><th>Km</th><th>Partenza</th><th>Arrivo</th><th>Durata</th></tr></thead><tbody>`;
+      legsHtml = `<table class="itinerary-legs-table"><thead><tr><th>Percorso</th><th>Mezzo</th><th>Km</th><th>Partenza</th><th>Arrivo</th><th>Durata</th></tr></thead><tbody>`;
       day.legs.forEach((leg) => {
         const modeClass = "mode-" + (leg.mezzo || "").toLowerCase();
         legsHtml += `<tr>

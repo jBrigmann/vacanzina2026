@@ -211,6 +211,29 @@ th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; text-transfo
 
 tr:last-child td { border-bottom: none; }
 
+/* Stessa larghezza di colonna su tutte le tabelle dei giorni in Itinerario,
+   così Mezzo/Km/Partenza/Arrivo/Durata restano allineati verticalmente
+   da un giorno all'altro invece di seguire la lunghezza del Percorso. */
+.itinerary-legs-table {
+  table-layout: fixed;
+}
+.itinerary-legs-table th:nth-child(1),
+.itinerary-legs-table td:nth-child(1) { width: 44%; }
+.itinerary-legs-table th:nth-child(2),
+.itinerary-legs-table td:nth-child(2) { width: 12%; }
+.itinerary-legs-table th:nth-child(3),
+.itinerary-legs-table td:nth-child(3) { width: 11%; }
+.itinerary-legs-table th:nth-child(4),
+.itinerary-legs-table td:nth-child(4) { width: 11%; }
+.itinerary-legs-table th:nth-child(5),
+.itinerary-legs-table td:nth-child(5) { width: 11%; }
+.itinerary-legs-table th:nth-child(6),
+.itinerary-legs-table td:nth-child(6) { width: 11%; }
+.itinerary-legs-table td:nth-child(1) {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .leg-mode {
   display: inline-block;
   width: 6.5rem;
