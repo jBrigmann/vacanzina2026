@@ -1,7 +1,7 @@
 window.TRIP_DATA = {
   "meta": {
     "titolo": "Vacanza in bici 2026 — Alessandria, Aquileia, Laguna, Venezia",
-    "generato_il": "2026-07-21"
+    "generato_il": "2026-07-22"
   },
   "days": [
     {
@@ -24,7 +24,7 @@ window.TRIP_DATA = {
             9.2286
           ],
           "mezzo": "treno",
-          "km": null,
+          "km": 88,
           "partenza": "05:19",
           "arrivo": "07:04",
           "durata": "01:45"
@@ -43,8 +43,8 @@ window.TRIP_DATA = {
             9.2373
           ],
           "mezzo": "treno",
-          "km": null,
-          "partenza": "07:13",
+          "km": 6,
+          "partenza": "07:15",
           "arrivo": "07:21",
           "durata": "00:06"
         },
@@ -62,7 +62,7 @@ window.TRIP_DATA = {
             10.984
           ],
           "mezzo": "treno",
-          "km": null,
+          "km": 144,
           "partenza": "07:31",
           "arrivo": "09:17",
           "durata": "01:44"
@@ -81,10 +81,10 @@ window.TRIP_DATA = {
             12.2357
           ],
           "mezzo": "treno",
-          "km": null,
-          "partenza": "09:22",
-          "arrivo": "10:37",
-          "durata": "01:15"
+          "km": 110,
+          "partenza": "09:40",
+          "arrivo": "11:56",
+          "durata": "02:16"
         },
         {
           "row": 8,
@@ -100,9 +100,9 @@ window.TRIP_DATA = {
             13.3313
           ],
           "mezzo": "treno",
-          "km": null,
-          "partenza": "10:49",
-          "arrivo": "12:06",
+          "km": 101,
+          "partenza": "12:51",
+          "arrivo": "14:06",
           "durata": "01:15"
         },
         {
@@ -178,11 +178,35 @@ window.TRIP_DATA = {
       ],
       "expenses": [
         {
-          "row": 3,
+          "row": 4,
           "voce": "biglietto del treno",
           "categoria": "trasporti",
           "quantita": 3,
-          "importo": 92.52,
+          "importo": 22.4,
+          "note": null
+        },
+        {
+          "row": 5,
+          "voce": "biglietto del treno",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 31.9,
+          "note": null
+        },
+        {
+          "row": 7,
+          "voce": "biglietto del treno",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 26.4,
+          "note": null
+        },
+        {
+          "row": 8,
+          "voce": "biglietto del treno",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 27.9,
           "note": null
         },
         {
@@ -505,17 +529,6 @@ window.TRIP_DATA = {
           "note": "Addebito previsto il 31 lug 2026",
           "link": "https://www.booking.com/Share-NTGp86",
           "servizi": "casa con cucina e lavatrice"
-        },
-        {
-          "row": 41,
-          "nome": "Appartamento vista parco",
-          "tipo": "appartamento",
-          "categoria": null,
-          "quantita": null,
-          "importo": null,
-          "note": 96.2,
-          "link": null,
-          "servizi": null
         }
       ],
       "expenses": [
@@ -544,7 +557,7 @@ window.TRIP_DATA = {
       "tappa": "CAORLE → CORTELLAZZO",
       "legs": [
         {
-          "row": 44,
+          "row": 43,
           "percorso": "Casa del Marinaio → Imbarco Porto Santa Margherita",
           "origin": "Casa del Marinaio",
           "destination": "Imbarco Porto Santa Margherita",
@@ -563,7 +576,7 @@ window.TRIP_DATA = {
           "durata": null
         },
         {
-          "row": 45,
+          "row": 44,
           "percorso": "Imbarco Porto Santa Margherita → Porto Santa Margherita",
           "origin": "Imbarco Porto Santa Margherita",
           "destination": "Porto Santa Margherita",
@@ -582,7 +595,7 @@ window.TRIP_DATA = {
           "durata": null
         },
         {
-          "row": 46,
+          "row": 45,
           "percorso": "Porto Santa Margherita → Cortellazzo",
           "origin": "Porto Santa Margherita",
           "destination": "Cortellazzo",
@@ -603,7 +616,7 @@ window.TRIP_DATA = {
       ],
       "accommodations": [
         {
-          "row": 49,
+          "row": 48,
           "nome": "Iesolo: Casa",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -616,7 +629,7 @@ window.TRIP_DATA = {
       ],
       "expenses": [
         {
-          "row": 47,
+          "row": 46,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -624,7 +637,7 @@ window.TRIP_DATA = {
           "note": null
         },
         {
-          "row": 48,
+          "row": 47,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -640,7 +653,7 @@ window.TRIP_DATA = {
       "tappa": "CORTELLAZZO → BURANO",
       "legs": [
         {
-          "row": 52,
+          "row": 51,
           "percorso": "Cortellazzo → Punta Tre Porti",
           "origin": "Cortellazzo",
           "destination": "Punta Tre Porti",
@@ -659,7 +672,7 @@ window.TRIP_DATA = {
           "durata": null
         },
         {
-          "row": 53,
+          "row": 52,
           "percorso": "Punta Tre Porti → Burano",
           "origin": "Punta Tre Porti",
           "destination": "Burano",
@@ -680,7 +693,7 @@ window.TRIP_DATA = {
       ],
       "accommodations": [
         {
-          "row": 58,
+          "row": 57,
           "nome": "Welcome Home",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -693,7 +706,7 @@ window.TRIP_DATA = {
       ],
       "expenses": [
         {
-          "row": 54,
+          "row": 53,
           "voce": "ACTV biglietto 3 giorni",
           "categoria": "trasporti",
           "quantita": 2,
@@ -701,7 +714,7 @@ window.TRIP_DATA = {
           "note": "Venezia Unica"
         },
         {
-          "row": 55,
+          "row": 54,
           "voce": "ACTV biglietto 3 giorni",
           "categoria": "trasporti",
           "quantita": 1,
@@ -709,7 +722,7 @@ window.TRIP_DATA = {
           "note": "Rolling Venice per bambini (sconti su trasporti e musei)"
         },
         {
-          "row": 56,
+          "row": 55,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -717,7 +730,7 @@ window.TRIP_DATA = {
           "note": null
         },
         {
-          "row": 57,
+          "row": 56,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -733,7 +746,7 @@ window.TRIP_DATA = {
       "tappa": "BURANO → VENEZIA",
       "legs": [
         {
-          "row": 61,
+          "row": 60,
           "percorso": "→",
           "origin": null,
           "destination": null,
@@ -748,7 +761,7 @@ window.TRIP_DATA = {
       ],
       "accommodations": [
         {
-          "row": 66,
+          "row": 65,
           "nome": "Dimora Veneziana Rooms",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -761,7 +774,7 @@ window.TRIP_DATA = {
       ],
       "expenses": [
         {
-          "row": 64,
+          "row": 63,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -769,7 +782,7 @@ window.TRIP_DATA = {
           "note": null
         },
         {
-          "row": 65,
+          "row": 64,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -786,7 +799,7 @@ window.TRIP_DATA = {
       "legs": [],
       "accommodations": [
         {
-          "row": 71,
+          "row": 70,
           "nome": "Dimora Veneziana Rooms",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -799,7 +812,7 @@ window.TRIP_DATA = {
       ],
       "expenses": [
         {
-          "row": 69,
+          "row": 68,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -807,7 +820,7 @@ window.TRIP_DATA = {
           "note": null
         },
         {
-          "row": 70,
+          "row": 69,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -824,7 +837,7 @@ window.TRIP_DATA = {
       "legs": [],
       "accommodations": [
         {
-          "row": 76,
+          "row": 75,
           "nome": "Dimora Veneziana Rooms",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -837,7 +850,7 @@ window.TRIP_DATA = {
       ],
       "expenses": [
         {
-          "row": 74,
+          "row": 73,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -845,7 +858,7 @@ window.TRIP_DATA = {
           "note": null
         },
         {
-          "row": 75,
+          "row": 74,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -862,7 +875,7 @@ window.TRIP_DATA = {
       "legs": [],
       "accommodations": [
         {
-          "row": 81,
+          "row": 80,
           "nome": "Dimora Veneziana Rooms",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -875,7 +888,7 @@ window.TRIP_DATA = {
       ],
       "expenses": [
         {
-          "row": 79,
+          "row": 78,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -883,7 +896,7 @@ window.TRIP_DATA = {
           "note": null
         },
         {
-          "row": 80,
+          "row": 79,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -899,7 +912,7 @@ window.TRIP_DATA = {
       "tappa": "VENEZIA → ALESSANDRIA",
       "legs": [
         {
-          "row": 84,
+          "row": 83,
           "percorso": "Venezia Santa Lucia → Bologna Centrale",
           "origin": "Venezia Santa Lucia",
           "destination": "Bologna Centrale",
@@ -918,7 +931,7 @@ window.TRIP_DATA = {
           "durata": "02:05"
         },
         {
-          "row": 85,
+          "row": 84,
           "percorso": "Bologna Centrale → Alessandria",
           "origin": "Bologna Centrale",
           "destination": "Alessandria",
@@ -940,7 +953,7 @@ window.TRIP_DATA = {
       "accommodations": [],
       "expenses": [
         {
-          "row": 83,
+          "row": 82,
           "voce": "biglietto del treno",
           "categoria": "trasporti",
           "quantita": 3,
@@ -948,7 +961,7 @@ window.TRIP_DATA = {
           "note": null
         },
         {
-          "row": 86,
+          "row": 85,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -1005,7 +1018,7 @@ window.TRIP_DATA = {
   "costi_preparatori_totale": 278,
   "totali": {
     "costi_preparatori": 278,
-    "itinerario": 2796.5799999999995,
-    "totale": 3074.5799999999995
+    "itinerario": 2812.66,
+    "totale": 3090.66
   }
 };
