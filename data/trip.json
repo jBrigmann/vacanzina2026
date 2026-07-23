@@ -1014,7 +1014,10 @@
             44.5075,
             11.3426
           ],
-          "dest_coords": null,
+          "dest_coords": [
+            45.0526,
+            9.6923
+          ],
           "mezzo": "treno",
           "km": 146.82,
           "partenza": "18:33",
@@ -1026,8 +1029,14 @@
           "percorso": "Piacenza → Voghera",
           "origin": "Piacenza",
           "destination": "Voghera",
-          "origin_coords": null,
-          "dest_coords": null,
+          "origin_coords": [
+            45.0526,
+            9.6923
+          ],
+          "dest_coords": [
+            44.9923,
+            9.009
+          ],
           "mezzo": "treno",
           "km": 58.39,
           "partenza": "20:27",
@@ -1039,7 +1048,10 @@
           "percorso": "Voghera → Alessandria",
           "origin": "Voghera",
           "destination": "Alessandria",
-          "origin_coords": null,
+          "origin_coords": [
+            44.9923,
+            9.009
+          ],
           "dest_coords": [
             44.9133,
             8.6141

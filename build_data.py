@@ -39,6 +39,8 @@ COORDS = {
     "Burano": [45.4854, 12.4166],
     "Venezia": [45.4408, 12.3155],
     "Bologna Centrale": [44.5075, 11.3426],
+    "Piacenza": [45.0526, 9.6923],
+    "Voghera": [44.9923, 9.0090],
 }
 
 def coord_lookup(name):

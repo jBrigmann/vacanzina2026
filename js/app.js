@@ -44,7 +44,17 @@
       btn.classList.add("active");
       document.getElementById(btn.dataset.tab).classList.add("active");
       if (btn.dataset.tab === "mappa" && window._map) {
-        setTimeout(() => window._map.invalidateSize(), 50);
+        // La scheda Mappa è nascosta (display:none) quando la pagina si
+        // carica, quindi Leaflet calcola lo zoom su un contenitore di
+        // dimensione zero. Bisogna ridimensionare E ricalcolare la vista
+        // ("fitBounds") solo ora che il contenitore ha le dimensioni vere,
+        // altrimenti resta uno zoom sbagliato/enorme.
+        setTimeout(() => {
+          window._map.invalidateSize();
+          if (window._mapBounds && window._mapBounds.length) {
+            window._map.fitBounds(window._mapBounds, { padding: [30, 30] });
+          }
+        }, 50);
       }
     });
   });
@@ -378,6 +388,7 @@
     });
   });
 
+  window._mapBounds = bounds;
   if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
   else map.setView([45.5, 12.5], 8);
 
