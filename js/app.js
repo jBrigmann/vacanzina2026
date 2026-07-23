@@ -132,9 +132,10 @@
       }
     });
 
-    // "Km per giorno" si ferma al 9 agosto: da Venezia in poi (10-14 agosto)
-    // non ci sono più tappe in bici, quindi quei giorni non compaiono nel grafico.
-    if (day.date <= "2026-08-09") {
+    // "Km per giorno": mostra solo i giorni in cui ci si è spostati davvero
+    // (salta i giorni fissi a Venezia con 0 km), incluso il ritorno in treno
+    // del 14 agosto che ha comunque tanti km percorsi.
+    if (dayKm > 0) {
       kmByDay.push({ date: day.date_label, km: Math.round(dayKm * 10) / 10 });
     }
     spendByDay.push({ date: day.date_label, importo: Math.round(dayTotal * 100) / 100 });
@@ -232,23 +233,29 @@
     },
   });
 
-  // Km by mode
-  const modeLabels = Object.keys(kmByMode);
+  // Km by mode — barre orizzontali invece di torta: il treno percorre
+  // molti più km degli altri mezzi, in una torta le altre fette
+  // sparirebbero quasi del tutto.
+  const modeLabels = Object.keys(kmByMode).sort((a, b) => kmByMode[b] - kmByMode[a]);
   new Chart(document.getElementById("chart-km-mode"), {
-    type: "pie",
+    type: "bar",
     data: {
       labels: modeLabels,
       datasets: [{
+        label: "Km",
         data: modeLabels.map((m) => Math.round(kmByMode[m] * 10) / 10),
         backgroundColor: modeLabels.map((m) => colorFor(MODE_COLORS, m, "#999")),
+        borderRadius: 4,
       }],
     },
     options: {
+      indexAxis: "y",
       responsive: true, maintainAspectRatio: false,
       plugins: {
-        legend: { position: "bottom" },
-        tooltip: { callbacks: { label: (ctx) => `${ctx.label}: ${ctx.parsed} km` } },
+        legend: { display: false },
+        tooltip: { callbacks: { label: (ctx) => `${ctx.parsed.x} km` } },
       },
+      scales: { x: { ticks: { callback: (v) => v + " km" } } },
     },
   });
 
@@ -342,6 +349,14 @@
     "#8e6fbe", "#d9564f", "#3f9142",
   ];
 
+  // Tracce ferroviarie: 9 file, uno per ogni tratta in treno, nello stesso
+  // ordine in cui le tratte in treno compaiono nel viaggio (5 il 4 agosto,
+  // 4 il 14 agosto). Non sono tracce GPS reali ma percorsi ricostruiti
+  // via stazioni intermedie, quindi seguono l'andamento vero della linea
+  // molto meglio di una linea retta.
+  const TRAIN_ROUTES = (window.TRAIN_ROUTES && window.TRAIN_ROUTES.routes) || [];
+  let trainRouteCursor = 0;
+
   DATA.days.forEach((day, dayIndex) => {
     const route = ROUTES[dayIndex];
 
@@ -382,6 +397,18 @@
           bounds.push(c);
         }
       });
+      if (mode === "treno" && TRAIN_ROUTES[trainRouteCursor]) {
+        const trainRoute = TRAIN_ROUTES[trainRouteCursor];
+        trainRouteCursor += 1;
+        if (trainRoute.track && trainRoute.track.length) {
+          const trainLatLng = trainRoute.track.map((p) => [p[0], p[1]]);
+          L.polyline(trainLatLng, { color: modeColor("treno"), weight: 3, opacity: 0.8 })
+            .bindPopup(`<strong>${trainRoute.name}</strong><br>percorso ferroviario ricostruito`)
+            .addTo(map);
+          trainLatLng.forEach((c) => bounds.push(c));
+          return;
+        }
+      }
       if (o && d) {
         L.polyline([o, d], { color: modeColor(leg.mezzo), weight: 3, opacity: 0.75, dashArray: "6,4" }).addTo(map);
       }
