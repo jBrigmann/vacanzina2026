@@ -182,18 +182,20 @@ section.panel.active { display: block; }
 
 #map:fullscreen, #map:-webkit-full-screen { border-radius: 0; }
 
-.map-fullscreen-btn {
-  display: flex;
+/* Selettore più specifico di ".leaflet-bar a" (regola di Leaflet stesso)
+   altrimenti quella vince e nasconde/deforma il pulsante. */
+.leaflet-bar a.map-fullscreen-btn {
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  font-size: 1.1rem;
+  width: 30px !important;
+  height: 30px !important;
+  line-height: normal !important;
   background: #fff;
   color: var(--text);
   text-decoration: none;
 }
-.map-fullscreen-btn:hover { background: #f2f5f7; }
+.leaflet-bar a.map-fullscreen-btn:hover { background: #f2f5f7; }
 
 .map-note {
   font-size: 0.85rem;
@@ -249,7 +251,6 @@ table {
 .itinerary-legs-table { min-width: 590px; }
 .cost-detail-day-table { min-width: 480px; }
 #bookings-table { min-width: 920px; }
-#prep-table { min-width: 380px; }
 #cost-summary-table { min-width: 320px; }
 
 table caption { text-align: left; font-weight: 600; margin-bottom: 0.4rem; }

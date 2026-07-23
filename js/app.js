@@ -150,19 +150,13 @@
     spendByDay.push({ date: day.date_label, importo: Math.round(dayTotal * 100) / 100 });
   });
 
-  DATA.costi_preparatori.forEach((c) => {
-    if (c.importo) {
-      const cat = normalizeCategory(c.categoria);
-      categoryTotals[cat] = (categoryTotals[cat] || 0) + c.importo;
-    }
-  });
+  // Costi preparatori (attrezzatura, noleggi) volutamente esclusi: non
+  // vengono più mostrati né conteggiati nei totali del sito.
 
   // ---------- Summary cards ----------
   const totNights = DATA.days.length - 1;
   const summaryCards = [
-    { label: "Costo totale", value: EUR(DATA.totali.totale) },
-    { label: "Costi itinerario", value: EUR(DATA.totali.itinerario) },
-    { label: "Costi preparatori", value: EUR(DATA.totali.costi_preparatori) },
+    { label: "Costo totale", value: EUR(DATA.totali.itinerario) },
     { label: "Costo medio/giorno", value: EUR(DATA.totali.itinerario / DATA.days.length) },
     { label: "Giorni di viaggio", value: DATA.days.length },
     { label: "Km totali", value: `${Math.round(totalKm * 10) / 10} km` },
@@ -355,7 +349,9 @@
       const link = L.DomUtil.create("a", "map-fullscreen-btn", container);
       link.href = "#";
       link.title = "Schermo intero";
-      link.innerHTML = "⛶";
+      // SVG invece di un carattere Unicode: alcuni font/browser non hanno
+      // il glifo "schermo intero" e mostrano un quadratino vuoto.
+      link.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 9 4 4 9 4"></polyline><polyline points="15 4 20 4 20 9"></polyline><polyline points="20 15 20 20 15 20"></polyline><polyline points="9 20 4 20 4 15"></polyline></svg>';
       L.DomEvent.disableClickPropagation(container);
       L.DomEvent.on(link, "click", (e) => {
         L.DomEvent.preventDefault(e);
@@ -480,18 +476,11 @@
           <td><span class="legend-swatch" style="background:${colorFor(CATEGORY_COLORS, k, "#999")}"></span>${k}</td>
           <td>${EUR(catValues[idx])}</td>
         </tr>`).join("")}
-        <tr><td><strong>Totale generale</strong></td><td><strong>${EUR(DATA.totali.totale)}</strong></td></tr>
+        <tr><td><strong>Totale generale</strong></td><td><strong>${EUR(DATA.totali.itinerario)}</strong></td></tr>
       </tbody>
     </table>
     </div>
   `;
-
-  const prepBody = document.querySelector("#prep-table tbody");
-  DATA.costi_preparatori.forEach((c) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${c.voce}</td><td>${c.categoria}</td><td>${EUR(c.importo)}</td>`;
-    prepBody.appendChild(tr);
-  });
 
   // Dettaglio spese: una card per giorno (stesso stile della pagina Itinerario)
   // invece di un'unica tabella lunga con data e tappa ripetute su ogni riga.
