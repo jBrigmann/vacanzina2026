@@ -289,7 +289,7 @@ tr:last-child td { border-bottom: none; }
 }
 .mode-treno { background: #3f6fa8; }
 .mode-bici { background: #1f9e8f; }
-.mode-barca, .mode-vaporetto { background: #e08e1d; }
+.mode-barca, .mode-vaporetto, .mode-traghetto { background: #e08e1d; }
 
 .badge {
   display: inline-block;

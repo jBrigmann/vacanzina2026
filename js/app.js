@@ -19,6 +19,7 @@
     "treno": "#3f6fa8",
     "bici": "#1f9e8f",
     "barca": "#e08e1d",
+    "traghetto": "#e08e1d",
     "vaporetto": "#c9762a",
   };
 
