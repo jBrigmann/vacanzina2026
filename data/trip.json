@@ -1,14 +1,14 @@
 {
   "meta": {
     "titolo": "Vacanza in bici 2026 — Alessandria, Aquileia, Laguna, Venezia",
-    "generato_il": "2026-07-22"
+    "generato_il": "2026-07-23"
   },
   "days": [
     {
       "date": "2026-08-04",
       "date_label": "4 agosto",
       "weekday": "ma",
-      "tappa": "ALESSANDRIA → CERVIGNANO",
+      "tappa": "ALESSANDRIA → CERVIGNANO DEL FRIULI",
       "legs": [
         {
           "row": 4,
@@ -231,7 +231,7 @@
       "date": "2026-08-05",
       "date_label": "5 agosto",
       "weekday": "me",
-      "tappa": "AQUILEIA → MARANO",
+      "tappa": "AQUILEIA → MARANO LAGUNARE",
       "legs": [
         {
           "row": 18,
@@ -267,9 +267,9 @@
           ],
           "mezzo": "barca",
           "km": 7.15,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "partenza": "10:30",
+          "arrivo": "12:00",
+          "durata": "01:30"
         },
         {
           "row": 20,
@@ -286,9 +286,9 @@
           ],
           "mezzo": "bici",
           "km": 0.5,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "partenza": "12:05",
+          "arrivo": "12:07",
+          "durata": "00:02"
         }
       ],
       "accommodations": [
@@ -307,11 +307,11 @@
       "expenses": [
         {
           "row": 19,
-          "voce": "Motoscafo Pinta",
+          "voce": "biglietto barca",
           "categoria": "trasporti",
           "quantita": 3,
           "importo": 150,
-          "note": null
+          "note": "Motoscafo Pinta"
         },
         {
           "row": 21,
@@ -335,7 +335,7 @@
       "date": "2026-08-06",
       "date_label": "6 agosto",
       "weekday": "gi",
-      "tappa": "MARANO LAGUNARE → LIGNANO",
+      "tappa": "MARANO LAGUNARE → LIGNANO SABBIADORO",
       "legs": [
         {
           "row": 26,
@@ -350,7 +350,7 @@
             45.6773,
             13.1345
           ],
-          "mezzo": "barca",
+          "mezzo": "traghetto",
           "km": 8.21,
           "partenza": "09:00",
           "arrivo": "09:40",
@@ -392,11 +392,11 @@
       "expenses": [
         {
           "row": 26,
-          "voce": "TPLaguna",
+          "voce": "biglietto traghetto",
           "categoria": "trasporti",
           "quantita": 3,
           "importo": 17.4,
-          "note": null
+          "note": "TPLaguna"
         },
         {
           "row": 28,
@@ -420,7 +420,7 @@
       "date": "2026-08-07",
       "date_label": "7 agosto",
       "weekday": "ve",
-      "tappa": "LIGNANO → CAORLE",
+      "tappa": "LIGNANO SABBIADORO → CAORLE",
       "legs": [
         {
           "row": 33,
@@ -437,9 +437,9 @@
           ],
           "mezzo": "bici",
           "km": 14.6,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "partenza": "08:00",
+          "arrivo": "08:48",
+          "durata": "00:48"
         },
         {
           "row": 34,
@@ -454,11 +454,11 @@
             45.6667,
             12.9833
           ],
-          "mezzo": "barca",
+          "mezzo": "traghetto",
           "km": 3.8,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "partenza": "09:40",
+          "arrivo": "10:15",
+          "durata": "00:35"
         },
         {
           "row": 35,
@@ -475,9 +475,9 @@
           ],
           "mezzo": "bici",
           "km": 4.9,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "partenza": "10:25",
+          "arrivo": "10:42",
+          "durata": "00:17"
         },
         {
           "row": 36,
@@ -492,30 +492,27 @@
             45.5985,
             12.8892
           ],
-          "mezzo": "barca",
+          "mezzo": "traghetto",
           "km": 0.61,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "partenza": "11:00",
+          "arrivo": "11:10",
+          "durata": "00:10"
         },
         {
           "row": 37,
-          "percorso": "Caorle → Appartamento",
+          "percorso": "Caorle → Hotel Capinera",
           "origin": "Caorle",
-          "destination": "Appartamento",
+          "destination": "Hotel Capinera",
           "origin_coords": [
             45.5985,
             12.8892
           ],
-          "dest_coords": [
-            45.5985,
-            12.8892
-          ],
+          "dest_coords": null,
           "mezzo": "bici",
-          "km": 4.4,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "km": 4.1,
+          "partenza": "11:20",
+          "arrivo": "11:35",
+          "durata": "00:15"
         }
       ],
       "accommodations": [
@@ -532,6 +529,22 @@
         }
       ],
       "expenses": [
+        {
+          "row": 34,
+          "voce": "biglietto traghetto",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 18,
+          "note": "Traghetto Bibbione - Caorle"
+        },
+        {
+          "row": 36,
+          "voce": "biglietto traghetto",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 24,
+          "note": "Traghetto Bibbione - Caorle"
+        },
         {
           "row": 38,
           "voce": "pranzo al sacco",
@@ -558,22 +571,19 @@
       "legs": [
         {
           "row": 43,
-          "percorso": "Casa del Marinaio → Imbarco Porto Santa Margherita",
-          "origin": "Casa del Marinaio",
+          "percorso": "Hotel Capinera → Imbarco Porto Santa Margherita",
+          "origin": "Hotel Capinera",
           "destination": "Imbarco Porto Santa Margherita",
-          "origin_coords": [
-            45.594,
-            12.871
-          ],
+          "origin_coords": null,
           "dest_coords": [
             45.586,
             12.852
           ],
           "mezzo": "bici",
-          "km": 1.41,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "km": 1.75,
+          "partenza": "08:00",
+          "arrivo": "08:05",
+          "durata": "00:05"
         },
         {
           "row": 44,
@@ -588,11 +598,11 @@
             45.584,
             12.85
           ],
-          "mezzo": "barca",
+          "mezzo": "traghetto",
           "km": 0.13,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "partenza": "08:15",
+          "arrivo": "08:20",
+          "durata": "00:05"
         },
         {
           "row": 45,
@@ -609,9 +619,9 @@
           ],
           "mezzo": "bici",
           "km": 23.97,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "partenza": "08:30",
+          "arrivo": "09:55",
+          "durata": "01:25"
         }
       ],
       "accommodations": [
@@ -628,6 +638,14 @@
         }
       ],
       "expenses": [
+        {
+          "row": 44,
+          "voce": "biglietto traghetto",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 5.4,
+          "note": "Caronte PSM"
+        },
         {
           "row": 46,
           "voce": "pranzo al sacco",
@@ -654,41 +672,35 @@
       "legs": [
         {
           "row": 51,
-          "percorso": "Cortellazzo → Punta Tre Porti",
+          "percorso": "Cortellazzo → Punta TrePorti",
           "origin": "Cortellazzo",
-          "destination": "Punta Tre Porti",
+          "destination": "Punta TrePorti",
           "origin_coords": [
             45.5324,
             12.6892
           ],
-          "dest_coords": [
-            45.4599,
-            12.5423
-          ],
+          "dest_coords": null,
           "mezzo": "bici",
-          "km": 26.6,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "km": 26.7,
+          "partenza": "08:00",
+          "arrivo": "09:31",
+          "durata": "01:31"
         },
         {
           "row": 52,
-          "percorso": "Punta Tre Porti → Burano",
-          "origin": "Punta Tre Porti",
+          "percorso": "Punta TrePorti → Burano",
+          "origin": "Punta TrePorti",
           "destination": "Burano",
-          "origin_coords": [
-            45.4599,
-            12.5423
-          ],
+          "origin_coords": null,
           "dest_coords": [
             45.4854,
             12.4166
           ],
           "mezzo": "vaporetto",
-          "km": 3.6,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "km": 3.2,
+          "partenza": "10:34",
+          "arrivo": "10:54",
+          "durata": "00:20"
         }
       ],
       "accommodations": [
@@ -706,8 +718,16 @@
       ],
       "expenses": [
         {
+          "row": 52,
+          "voce": "biglietto vaporetto",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 28.5,
+          "note": null
+        },
+        {
           "row": 53,
-          "voce": "ACTV biglietto 3 giorni",
+          "voce": "ACTV biglietto 72 ore",
           "categoria": "trasporti",
           "quantita": 2,
           "importo": 90,
@@ -715,11 +735,11 @@
         },
         {
           "row": 54,
-          "voce": "ACTV biglietto 3 giorni",
+          "voce": "ACTV biglietto 72 ore",
           "categoria": "trasporti",
           "quantita": 1,
           "importo": 33,
-          "note": "Rolling Venice per bambini (sconti su trasporti e musei)"
+          "note": "Rolling Venice"
         },
         {
           "row": 55,
@@ -747,21 +767,76 @@
       "legs": [
         {
           "row": 60,
-          "percorso": "→",
-          "origin": null,
-          "destination": null,
+          "percorso": "Burano → Punta TrePorti",
+          "origin": "Burano",
+          "destination": "Punta TrePorti",
+          "origin_coords": [
+            45.4854,
+            12.4166
+          ],
+          "dest_coords": null,
+          "mezzo": "vaporetto",
+          "km": null,
+          "partenza": "07:53",
+          "arrivo": "08:08",
+          "durata": "00:15"
+        },
+        {
+          "row": 61,
+          "percorso": "Punta TrePorti → Sant'Erasmo Punta Vela",
+          "origin": "Punta TrePorti",
+          "destination": "Sant'Erasmo Punta Vela",
+          "origin_coords": null,
+          "dest_coords": null,
+          "mezzo": "vaporetto",
+          "km": null,
+          "partenza": "08:25",
+          "arrivo": "08:38",
+          "durata": "00:13"
+        },
+        {
+          "row": 62,
+          "percorso": "Sant'Erasmo Punta → Vela Sant'Erasmo Capannone",
+          "origin": "Sant'Erasmo Punta",
+          "destination": "Vela Sant'Erasmo Capannone",
           "origin_coords": null,
           "dest_coords": null,
           "mezzo": "bici",
+          "km": 3.59,
+          "partenza": "09:00",
+          "arrivo": "09:30",
+          "durata": "00:30"
+        },
+        {
+          "row": 63,
+          "percorso": "Sant'Erasmo Capannone → Vignole → Murano Faro",
+          "origin": "Sant'Erasmo Capannone",
+          "destination": "Vignole",
+          "origin_coords": null,
+          "dest_coords": null,
+          "mezzo": "vaporetto",
           "km": null,
-          "partenza": null,
-          "arrivo": null,
-          "durata": null
+          "partenza": "09:57",
+          "arrivo": "10:16",
+          "durata": "00:19"
+        },
+        {
+          "row": 64,
+          "percorso": "Murano Faro → Fondamentra Nove",
+          "origin": "Murano Faro",
+          "destination": "Fondamentra Nove",
+          "origin_coords": null,
+          "dest_coords": null,
+          "mezzo": "vaporetto",
+          "km": null,
+          "partenza": "10:16",
+          "arrivo": "10:25",
+          "durata": "00:09"
         }
       ],
       "accommodations": [
         {
-          "row": 65,
+          "row": 67,
           "nome": "Dimora Veneziana Rooms",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -774,7 +849,7 @@
       ],
       "expenses": [
         {
-          "row": 63,
+          "row": 65,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -782,7 +857,7 @@
           "note": null
         },
         {
-          "row": 64,
+          "row": 66,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -799,7 +874,7 @@
       "legs": [],
       "accommodations": [
         {
-          "row": 70,
+          "row": 72,
           "nome": "Dimora Veneziana Rooms",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -812,7 +887,7 @@
       ],
       "expenses": [
         {
-          "row": 68,
+          "row": 70,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -820,7 +895,7 @@
           "note": null
         },
         {
-          "row": 69,
+          "row": 71,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -837,7 +912,7 @@
       "legs": [],
       "accommodations": [
         {
-          "row": 75,
+          "row": 77,
           "nome": "Dimora Veneziana Rooms",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -850,7 +925,7 @@
       ],
       "expenses": [
         {
-          "row": 73,
+          "row": 75,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -858,7 +933,7 @@
           "note": null
         },
         {
-          "row": 74,
+          "row": 76,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -875,7 +950,7 @@
       "legs": [],
       "accommodations": [
         {
-          "row": 80,
+          "row": 82,
           "nome": "Dimora Veneziana Rooms",
           "tipo": "appartamento",
           "categoria": "alloggio",
@@ -888,7 +963,7 @@
       ],
       "expenses": [
         {
-          "row": 78,
+          "row": 80,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -896,7 +971,7 @@
           "note": null
         },
         {
-          "row": 79,
+          "row": 81,
           "voce": "cena",
           "categoria": "vitto",
           "quantita": 3,
@@ -912,7 +987,7 @@
       "tappa": "VENEZIA → ALESSANDRIA",
       "legs": [
         {
-          "row": 83,
+          "row": 85,
           "percorso": "Venezia Santa Lucia → Bologna Centrale",
           "origin": "Venezia Santa Lucia",
           "destination": "Bologna Centrale",
@@ -925,43 +1000,77 @@
             11.3426
           ],
           "mezzo": "treno",
-          "km": null,
-          "partenza": "13:40",
-          "arrivo": "15:45",
-          "durata": "02:05"
+          "km": 159.85,
+          "partenza": "15:13",
+          "arrivo": "17:21",
+          "durata": "02:08"
         },
         {
-          "row": 84,
-          "percorso": "Bologna Centrale → Alessandria",
+          "row": 86,
+          "percorso": "Bologna Centrale → Piacenza",
           "origin": "Bologna Centrale",
-          "destination": "Alessandria",
+          "destination": "Piacenza",
           "origin_coords": [
             44.5075,
             11.3426
           ],
+          "dest_coords": null,
+          "mezzo": "treno",
+          "km": 146.82,
+          "partenza": "18:33",
+          "arrivo": "20:10",
+          "durata": "01:37"
+        },
+        {
+          "row": 87,
+          "percorso": "Piacenza → Voghera",
+          "origin": "Piacenza",
+          "destination": "Voghera",
+          "origin_coords": null,
+          "dest_coords": null,
+          "mezzo": "treno",
+          "km": 58.39,
+          "partenza": "20:27",
+          "arrivo": "21:26",
+          "durata": "00:59"
+        },
+        {
+          "row": 88,
+          "percorso": "Voghera → Alessandria",
+          "origin": "Voghera",
+          "destination": "Alessandria",
+          "origin_coords": null,
           "dest_coords": [
             44.9133,
             8.6141
           ],
           "mezzo": "treno",
-          "km": null,
-          "partenza": "16:26",
-          "arrivo": "19:23",
-          "durata": "02:57"
+          "km": 38.11,
+          "partenza": "22:17",
+          "arrivo": "22:44",
+          "durata": "00:27"
         }
       ],
       "accommodations": [],
       "expenses": [
         {
-          "row": 82,
+          "row": 85,
           "voce": "biglietto del treno",
           "categoria": "trasporti",
           "quantita": 3,
-          "importo": 81.44999999999999,
+          "importo": 29.1,
           "note": null
         },
         {
-          "row": 85,
+          "row": 86,
+          "voce": "biglietto del treno",
+          "categoria": "trasporti",
+          "quantita": 3,
+          "importo": 49.650000000000006,
+          "note": null
+        },
+        {
+          "row": 90,
           "voce": "pranzo al sacco",
           "categoria": "vitto",
           "quantita": 3,
@@ -1018,7 +1127,7 @@
   "costi_preparatori_totale": 278,
   "totali": {
     "costi_preparatori": 278,
-    "itinerario": 2812.66,
-    "totale": 3090.66
+    "itinerario": 2885.86,
+    "totale": 3163.86
   }
 }

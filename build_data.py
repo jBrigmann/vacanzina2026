@@ -129,9 +129,9 @@ def accommodation_extra(nome):
 days = []
 current_day = None
 
-MAX_ROW = 88
+MAX_ROW = ws.max_row  # dinamico: si adatta se il foglio cresce o si accorcia
 
-for r in range(3, MAX_ROW):
+for r in range(3, MAX_ROW + 1):
     b = ws[f"B{r}"].value
     c = ws[f"C{r}"].value
     d = ws[f"D{r}"].value
