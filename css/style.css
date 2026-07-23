@@ -180,6 +180,21 @@ section.panel.active { display: block; }
 
 #map { height: 520px; border-radius: var(--radius); overflow: hidden; z-index: 1; }
 
+#map:fullscreen, #map:-webkit-full-screen { border-radius: 0; }
+
+.map-fullscreen-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 1.1rem;
+  background: #fff;
+  color: var(--text);
+  text-decoration: none;
+}
+.map-fullscreen-btn:hover { background: #f2f5f7; }
+
 .map-note {
   font-size: 0.85rem;
   color: var(--text-muted);

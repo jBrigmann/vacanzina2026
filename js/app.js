@@ -346,6 +346,46 @@
     maxZoom: 18,
   }).addTo(map);
 
+  // Pulsante schermo intero (usa la Fullscreen API del browser sul
+  // contenitore della mappa, nessuna libreria esterna necessaria).
+  const FullscreenControl = L.Control.extend({
+    options: { position: "topright" },
+    onAdd: function () {
+      const container = L.DomUtil.create("div", "leaflet-bar leaflet-control");
+      const link = L.DomUtil.create("a", "map-fullscreen-btn", container);
+      link.href = "#";
+      link.title = "Schermo intero";
+      link.innerHTML = "⛶";
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.on(link, "click", (e) => {
+        L.DomEvent.preventDefault(e);
+        const mapEl = document.getElementById("map");
+        const isFullscreen = document.fullscreenElement || document.webkitFullscreenElement;
+        if (!isFullscreen) {
+          if (mapEl.requestFullscreen) mapEl.requestFullscreen();
+          else if (mapEl.webkitRequestFullscreen) mapEl.webkitRequestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      });
+      return container;
+    },
+  });
+  map.addControl(new FullscreenControl());
+
+  ["fullscreenchange", "webkitfullscreenchange"].forEach((evt) => {
+    document.addEventListener(evt, () => {
+      setTimeout(() => {
+        map.invalidateSize();
+        if (window._mapBounds && window._mapBounds.length) {
+          map.fitBounds(window._mapBounds, { padding: [30, 30] });
+        }
+      }, 100);
+    });
+  });
+
   const bounds = [];
   const seenMarkers = new Set();
   const modeColor = (m) => colorFor(MODE_COLORS, m, "#555");
