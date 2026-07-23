@@ -246,7 +246,7 @@ table {
   font-size: 0.92rem;
 }
 
-.itinerary-legs-table { min-width: 640px; }
+.itinerary-legs-table { min-width: 590px; }
 .cost-detail-day-table { min-width: 480px; }
 #bookings-table { min-width: 920px; }
 #prep-table { min-width: 380px; }
@@ -271,17 +271,17 @@ tr:last-child td { border-bottom: none; }
   table-layout: fixed;
 }
 .itinerary-legs-table th:nth-child(1),
-.itinerary-legs-table td:nth-child(1) { width: 52%; }
+.itinerary-legs-table td:nth-child(1) { width: 210px; }
 .itinerary-legs-table th:nth-child(2),
-.itinerary-legs-table td:nth-child(2) { width: 12%; }
+.itinerary-legs-table td:nth-child(2) { width: 110px; }
 .itinerary-legs-table th:nth-child(3),
-.itinerary-legs-table td:nth-child(3) { width: 9%; }
+.itinerary-legs-table td:nth-child(3) { width: 70px; }
 .itinerary-legs-table th:nth-child(4),
-.itinerary-legs-table td:nth-child(4) { width: 9%; }
+.itinerary-legs-table td:nth-child(4) { width: 65px; }
 .itinerary-legs-table th:nth-child(5),
-.itinerary-legs-table td:nth-child(5) { width: 9%; }
+.itinerary-legs-table td:nth-child(5) { width: 65px; }
 .itinerary-legs-table th:nth-child(6),
-.itinerary-legs-table td:nth-child(6) { width: 9%; }
+.itinerary-legs-table td:nth-child(6) { width: 65px; }
 .itinerary-legs-table td:nth-child(1) {
   overflow-wrap: break-word;
   word-break: break-word;
@@ -308,13 +308,14 @@ tr:last-child td { border-bottom: none; }
 
 .leg-mode {
   display: inline-block;
-  width: 6.5rem;
+  width: 5.2rem;
   text-align: center;
-  padding: 0.15rem 0.4rem;
+  padding: 0.15rem 0.3rem;
   border-radius: 999px;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: #fff;
+  white-space: nowrap;
 }
 .mode-treno { background: #3f6fa8; }
 .mode-bici { background: #1f9e8f; }
