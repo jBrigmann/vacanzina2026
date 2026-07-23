@@ -217,11 +217,25 @@ section.panel.active { display: block; }
   border-radius: 999px;
 }
 
+/* Su schermi stretti le tabelle con molte colonne non ci stanno: invece di
+   schiacciare/sovrapporre il testo, il contenitore scorre in orizzontale
+   e la tabella mantiene una larghezza minima leggibile. */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.92rem;
 }
+
+.itinerary-legs-table { min-width: 640px; }
+.cost-detail-day-table { min-width: 480px; }
+#bookings-table { min-width: 920px; }
+#prep-table { min-width: 380px; }
+#cost-summary-table { min-width: 320px; }
 
 table caption { text-align: left; font-weight: 600; margin-bottom: 0.4rem; }
 

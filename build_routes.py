@@ -1,11 +1,13 @@
 import json
+import os
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+BASE_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 SRC_DIR = Path("/sessions/wizardly-compassionate-mendel/mnt/Vacanze")
-OUT_JSON = Path("/sessions/wizardly-compassionate-mendel/mnt/outputs/vacanza2026/data/routes.json")
-OUT_JS = Path("/sessions/wizardly-compassionate-mendel/mnt/outputs/vacanza2026/js/routes.js")
+OUT_JSON = BASE_DIR / "data" / "routes.json"
+OUT_JS = BASE_DIR / "js" / "routes.js"
 
 NS = {"gpx": "http://www.topografix.com/GPX/1/1"}
 

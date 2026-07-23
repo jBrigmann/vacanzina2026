@@ -7,7 +7,6 @@
 
   const CATEGORY_COLORS = {
     "trasporti": "#3f6fa8",
-    "trasporto": "#3f6fa8",
     "vitto": "#1f9e8f",
     "alloggio": "#e08e1d",
     "attrezzatura cicloturismo": "#8e6fbe",
@@ -15,6 +14,15 @@
     "abbigliamento tecnico": "#55b1c9",
     "elettronica": "#96a2ab",
   };
+
+  // Il foglio "Costi preparatori" usa "trasporto" (singolare), il foglio
+  // "Itinerario" usa "trasporti" (plurale): stessa categoria, etichetta
+  // diversa. Le unifico qui per non farle comparire come due voci separate.
+  function normalizeCategory(cat) {
+    if (!cat) return cat;
+    const c = cat.trim().toLowerCase();
+    return c === "trasporto" ? "trasporti" : c;
+  }
   const MODE_COLORS = {
     "treno": "#3f6fa8",
     "bici": "#1f9e8f",
@@ -111,7 +119,8 @@
       });
       if (exp.importo) {
         dayTotal += exp.importo;
-        categoryTotals[exp.categoria] = (categoryTotals[exp.categoria] || 0) + exp.importo;
+        const cat = normalizeCategory(exp.categoria);
+        categoryTotals[cat] = (categoryTotals[cat] || 0) + exp.importo;
       }
     });
 
@@ -121,7 +130,7 @@
       });
       if (acc.importo) {
         dayTotal += acc.importo;
-        const cat = (acc.categoria || "alloggio").toLowerCase();
+        const cat = normalizeCategory(acc.categoria || "alloggio");
         categoryTotals[cat] = (categoryTotals[cat] || 0) + acc.importo;
       }
       if (acc.importo != null) {
@@ -143,7 +152,8 @@
 
   DATA.costi_preparatori.forEach((c) => {
     if (c.importo) {
-      categoryTotals[c.categoria] = (categoryTotals[c.categoria] || 0) + c.importo;
+      const cat = normalizeCategory(c.categoria);
+      categoryTotals[cat] = (categoryTotals[cat] || 0) + c.importo;
     }
   });
 
@@ -291,7 +301,7 @@
 
     let legsHtml = "";
     if (day.legs.length) {
-      legsHtml = `<table class="itinerary-legs-table"><thead><tr><th>Percorso</th><th>Mezzo</th><th>Km</th><th>Partenza</th><th>Arrivo</th><th>Durata</th></tr></thead><tbody>`;
+      legsHtml = `<div class="table-scroll"><table class="itinerary-legs-table"><thead><tr><th>Percorso</th><th>Mezzo</th><th>Km</th><th>Partenza</th><th>Arrivo</th><th>Durata</th></tr></thead><tbody>`;
       day.legs.forEach((leg) => {
         const modeClass = "mode-" + (leg.mezzo || "").toLowerCase();
         legsHtml += `<tr>
@@ -303,7 +313,7 @@
           <td>${leg.durata || "-"}</td>
         </tr>`;
       });
-      legsHtml += "</tbody></table>";
+      legsHtml += "</tbody></table></div>";
     }
 
     // Pagina Itinerario = solo logistica (percorsi, orari, alloggio,
@@ -422,7 +432,8 @@
   // ---------- Costs panel ----------
   const costsSummaryEl = document.getElementById("costs-summary");
   costsSummaryEl.innerHTML = `
-    <table>
+    <div class="table-scroll">
+    <table id="cost-summary-table">
       <thead><tr><th>Categoria</th><th>Totale</th></tr></thead>
       <tbody>
         ${catLabels.map((k, idx) => `<tr>
@@ -432,6 +443,7 @@
         <tr><td><strong>Totale generale</strong></td><td><strong>${EUR(DATA.totali.totale)}</strong></td></tr>
       </tbody>
     </table>
+    </div>
   `;
 
   const prepBody = document.querySelector("#prep-table tbody");
@@ -464,10 +476,12 @@
         <span class="day-date">${day.date_label}</span>
         <span class="day-tappa">${day.tappa}</span>
       </div>
-      <table class="cost-detail-day-table">
-        <thead><tr><th>Voce</th><th>Categoria</th><th>Importo</th><th>Note</th></tr></thead>
-        <tbody>${tableRows}</tbody>
-      </table>
+      <div class="table-scroll">
+        <table class="cost-detail-day-table">
+          <thead><tr><th>Voce</th><th>Categoria</th><th>Importo</th><th>Note</th></tr></thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+      </div>
       <p class="mini day-cost-total">Totale giorno: <strong>${EUR(dayTotal)}</strong></p>
     `;
     detailContainer.appendChild(card);
