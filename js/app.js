@@ -524,12 +524,10 @@
       const dueDate = parseItalianNoteDate(acc.note);
       return { ...acc, dueDate };
     });
-  bookingRows.sort((a, b) => {
-    if (a.dueDate && b.dueDate) return a.dueDate - b.dueDate;
-    if (a.dueDate) return -1;
-    if (b.dueDate) return 1;
-    return 0;
-  });
+  // Ordinate per data di check-in (ordine del viaggio), non per scadenza
+  // di pagamento: le scadenze non seguono lo stesso ordine dei giorni di
+  // soggiorno, e ordinare per scadenza rendeva l'elenco confuso da leggere.
+  bookingRows.sort((a, b) => a.date.localeCompare(b.date));
   bookingRows.forEach((acc) => {
     let statusHtml = `<span class="badge badge-future">n/d</span>`;
     if (acc.dueDate) {
