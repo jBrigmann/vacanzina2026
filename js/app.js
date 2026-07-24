@@ -518,39 +518,60 @@
 
   // ---------- Bookings panel ----------
   const bookingsBody = document.querySelector("#bookings-table tbody");
-  const bookingRows = allAccommodationRows
+
+  function isNextDay(dateStr, nextDateStr) {
+    const d = new Date(dateStr);
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().slice(0, 10) === nextDateStr;
+  }
+
+  const sortedAcc = allAccommodationRows
     .filter((acc) => acc.importo != null) // solo prenotazioni effettive, non le alternative valutate
-    .map((acc) => {
-      const dueDate = parseItalianNoteDate(acc.note);
-      return { ...acc, dueDate };
-    });
-  // Ordinate per data di check-in (ordine del viaggio), non per scadenza
-  // di pagamento: le scadenze non seguono lo stesso ordine dei giorni di
-  // soggiorno, e ordinare per scadenza rendeva l'elenco confuso da leggere.
-  bookingRows.sort((a, b) => a.date.localeCompare(b.date));
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  // Notti consecutive nello stesso alloggio diventano un'unica riga con
+  // l'importo sommato (es. 4 notti a Venezia = 1 riga da 554 € invece di 4
+  // righe identiche da 138,50 €).
+  const bookingRows = [];
+  sortedAcc.forEach((acc) => {
+    const last = bookingRows[bookingRows.length - 1];
+    if (last && last.nome === acc.nome && isNextDay(last.lastDate, acc.date)) {
+      last.importo += acc.importo;
+      last.lastDate = acc.date;
+      last.lastDateLabel = acc.date_label;
+      if (!last.note && acc.note) last.note = acc.note;
+    } else {
+      bookingRows.push({
+        ...acc,
+        lastDate: acc.date,
+        lastDateLabel: acc.date_label,
+      });
+    }
+  });
+
   bookingRows.forEach((acc) => {
+    const dueDate = parseItalianNoteDate(acc.note);
     let statusHtml = `<span class="badge badge-future">n/d</span>`;
-    if (acc.dueDate) {
-      const d = daysBetween(TODAY, acc.dueDate);
+    if (dueDate) {
+      const d = daysBetween(TODAY, dueDate);
       if (d < 0) statusHtml = `<span class="badge badge-late">scaduto (${Math.abs(d)}gg fa)</span>`;
       else if (d <= 7) statusHtml = `<span class="badge badge-soon">tra ${d} giorni</span>`;
       else statusHtml = `<span class="badge badge-future">tra ${d} giorni</span>`;
-    } else if (!acc.importo) {
-      statusHtml = `<span class="badge badge-future">alternativa</span>`;
     }
-    const importoLabel = acc.importo != null ? EUR(acc.importo) : (typeof acc.note === "number" ? EUR(acc.note) + " (stimato)" : "—");
-    const noteLabel = typeof acc.note === "string" ? acc.note : "";
+    const checkinLabel = acc.lastDateLabel !== acc.date_label
+      ? `${acc.date_label} – ${acc.lastDateLabel}`
+      : acc.date_label;
+    const importoLabel = EUR(acc.importo);
     const nomeLabel = linkWithPreview(acc.nome, acc.link);
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${statusHtml}</td>
-      <td>${acc.date_label}</td>
+      <td>${checkinLabel}</td>
       <td>${nomeLabel}</td>
       <td>${acc.tipo || ""}</td>
       <td>${importoLabel}</td>
-      <td>${acc.dueDate ? acc.dueDate.toLocaleDateString("it-IT") : "-"}</td>
+      <td>${dueDate ? dueDate.toLocaleDateString("it-IT") : "-"}</td>
       <td class="mini">${acc.servizi || ""}</td>
-      <td class="mini">${noteLabel}</td>
     `;
     bookingsBody.appendChild(tr);
   });
